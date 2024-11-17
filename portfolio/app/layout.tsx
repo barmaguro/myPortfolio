@@ -1,19 +1,24 @@
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
-import FirstView from "./components/FirstView";
-import TabMneu from "./components/TabMneu";
+import Header from "./components/Header";
+import { Inconsolata } from "next/font/google";
+import BreadCrumb from "./components/BreadCrumb";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+const InconsolataFont = Inconsolata({
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -29,11 +34,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${InconsolataFont.className} text-primary`} 
       >
+          <Header />
+          <BreadCrumb />
         {children}
-        <FirstView />
-        <TabMneu />
       </body>
     </html>
   );

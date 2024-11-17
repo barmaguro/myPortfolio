@@ -1,9 +1,9 @@
-// import Image from "next/image";
+
 
 export default function Page() {
   return (
-    <h1 className="">
-      Hello, Next.js!
-    </h1>
+  <div className="container mx-auto px-4">
+   
+  </div>
   );
 }

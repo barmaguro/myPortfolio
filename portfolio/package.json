@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --port 8080",
     "build": "next build",
@@ -10,11 +11,23 @@
     "fix:lint": "next lint --fix"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.456.0",
+    "microcms-js-sdk": "^3.1.2",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/node": "^20.16.11",
     "@types/react": "^18",
     "@types/react-dom": "^18",
