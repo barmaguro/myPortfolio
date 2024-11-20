@@ -23,7 +23,7 @@ body {
     --popover-foreground: 36 36 36;
     --primary: 15 56 0;
     --primary-foreground: 255 233 237;
-    --secondary: 242 243 245;
+    --secondary: 137 159 129;
     --secondary-foreground: 23 23 23;
     --muted: 242 243 245;
     --muted-foreground: 137 137 137;
@@ -77,4 +77,31 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.top_kv-pseudo::before,.top_kv-pseudo::after{
+  content:"";
+  position:absolute;
+  width: 90px;
+  height: 36px;
+  background-color: rgb(var(--background));
+  z-index: -50;
+}
+
+.top_kv-pseudo::before{
+  top: 0;
+  left: 0;
+  rotate: -45deg;
+  translate: -50% -50%;
+  transform-origin: center;
+  border-bottom: 1px solid rgb(var(--primary));
+}
+
+.top_kv-pseudo::after{
+  bottom: 0;
+  right: 0;
+  rotate: -45deg;
+  translate: 50% 50%;
+  border-top: 1px solid rgb(var(--primary));
 }
