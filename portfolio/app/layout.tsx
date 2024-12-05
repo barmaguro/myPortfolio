@@ -1,10 +1,9 @@
 // import localFont from "next/font/local";
-import React from "react";
 import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./components/Header";
 import { Inconsolata } from "next/font/google";
-import BreadCrumb from "./components/BreadCrumb";
+import React from "react";
+import Header from "app/_components/Header";
+import "./globals.css";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -18,7 +17,7 @@ import BreadCrumb from "./components/BreadCrumb";
 // });
 
 const InconsolataFont = Inconsolata({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -33,11 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${InconsolataFont.className} text-primary`} 
-      >
-          <Header />
-          <BreadCrumb />
+      <body className={`${InconsolataFont.className} text-primary`}>
+        <Header />
         {children}
       </body>
     </html>

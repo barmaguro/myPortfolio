@@ -1,6 +1,6 @@
 import Image from "next/image";
-import BadgeLine from "../components/BadgeLine";
-import SectionTitle from "../components/SectionTitle";
+import BadgeLine from "./BadgeLine";
+import SectionTitle from "./SectionTitle";
 
 const serviceContets = [
   {
@@ -32,24 +32,28 @@ const ServiceSection = () => {
           {serviceContets.map((service, index) => (
             <>
               <div className="grid grid-rows-auto " key={index}>
-                    <h3 className="text-xl uppercase place-self-center">
-                      {service.title}
-                    </h3>
+                <h3 className="text-xl uppercase place-self-center">
+                  {service.title}
+                </h3>
                 <div className="grid grid-cols-2">
-                    <div className="">
-                      <Image
-                        src={service.image}
-                        alt=""
-                        className="h-full w-full object-cover"
-                        width={320}
-                        height={250}
-                      />
-                    </div>
-                  <BadgeLine
-                    BadgeLineArray={[{ [service.title]: service.skills }]}
-                  />
+                  <div className="">
+                    <Image
+                      src={service.image}
+                      alt=""
+                      className="h-full w-full object-cover"
+                      width={320}
+                      height={250}
+                    />
+                  </div>
+                  <div className="mt-5 pl-6">
+                    <BadgeLine
+                      BadgeLineArray={[{ [service.title]: service.skills }]}
+                    />
+                  </div>
                 </div>
-                <p className="whitespace-pre-line mt-5 px-4 text-xs leading-loose">{service.text}</p>
+                <p className="whitespace-pre-line mt-5 px-4 text-xs leading-loose">
+                  {service.text}
+                </p>
               </div>
             </>
           ))}

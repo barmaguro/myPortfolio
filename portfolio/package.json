@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix:lint": "next lint --fix"
+    "fix:lint": "next lint --fix",
+    "debug": "NODE_OPTIONS='--inspect' next"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
@@ -17,6 +18,8 @@
     "@radix-ui/react-tabs": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.10",
+    "embla-carousel-react": "^8.4.0",
     "gsap": "^3.12.5",
     "lucide-react": "^0.456.0",
     "microcms-js-sdk": "^3.1.2",
