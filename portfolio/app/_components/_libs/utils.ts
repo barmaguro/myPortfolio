@@ -1,6 +1,9 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { PageRoute, pageNameMap } from "./routes";
+import dayjs from "dayjs";
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -36,3 +39,11 @@ export function generateBreadcrumbs(pathName: string) {
     };
   });
 }
+
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+export const formatDate = (date: string) => {
+  return dayjs.utc(date).tz('Asia/Tokyo').format('YYYY/MM/DD');
+};

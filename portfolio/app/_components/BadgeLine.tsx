@@ -1,3 +1,4 @@
+import { log } from 'console';
 import React from 'react'
 
 type BadgeLineType = {
@@ -7,12 +8,12 @@ type BadgeLineType = {
   };
   
 
-  const BadgeLine = ({ BadgeLineArray }: BadgeLineType) => {
+  const BadgeLine = ({ BadgeLineArray }: BadgeLineType,index) => {
     return (
-      <div className="mt-4">
+      <div key={index}>
         {BadgeLineArray.map((list, index) => (
           <div key={index}>
-            <ul className="pl-6 flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-2">
               {Object.keys(list).map((key, i) => (
                 list[key].map((item, j) => (
                   <li key={`${i}-${j}`} className="py-1 px-4 border-1 border-secondary text-secondary text-sm rounded-full w-fit">
