@@ -23,7 +23,7 @@ const InconsolataFont = Inconsolata({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://localhost:3000"),
+  metadataBase: new URL("https://my-portfolio-3lch9irba-motokis-projects-bfd99225.vercel.app"),
   title: {
     template: "%s | MotoDesignのポートフォリオ",
     default: "MotoDesignのポートフォリオ",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
     images: ["/dynamic/ogp.png"],
   },
-  alternates: { canonical: "https://localhost:3000" },
+  alternates: { canonical: "https://my-portfolio-3lch9irba-motokis-projects-bfd99225.vercel.app" },
 };
 // TODO: images、urlの設定を追加する
 

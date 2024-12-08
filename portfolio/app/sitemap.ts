@@ -5,7 +5,8 @@ import {
 } from "./_components/_libs/microcms";
 
 // TODO:urlの設定
-const buildUrl = (path?: string) => `http://localhost:3000${path ?? ""}`;
+const buildUrl = (path?: string) =>
+  `http://my-portfolio-3lch9irba-motokis-projects-bfd99225.vercel.app${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const worksContents = await getAllWorksList();
