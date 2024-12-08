@@ -1,8 +1,10 @@
 // import localFont from "next/font/local";
+// import { GoogleTagManager } from '@next/third-parties/google';
+import Header from "app/_components/Header";
 import type { Metadata } from "next";
 import { Inconsolata } from "next/font/google";
 import React from "react";
-import Header from "app/_components/Header";
+
 import "./globals.css";
 
 // const geistSans = localFont({
@@ -21,9 +23,25 @@ const InconsolataFont = Inconsolata({
 });
 
 export const metadata: Metadata = {
-  title: "MotoDesignのポートフォリオ",
-  description: "WEB制作のフリーランス。MotoDesignのポートフォリオです。",
+  metadataBase: new URL("https://localhost:3000"),
+  title: {
+    template: "%s | MotoDesignのポートフォリオ",
+    default: "MotoDesignのポートフォリオ",
+  },
+  description:
+    "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
+  openGraph: {
+    title: {
+      template: "%s | MotoDesignのポートフォリオ",
+      default: "MotoDesignのポートフォリオ",
+    },
+    description:
+      "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
+    images: ["/dynamic/ogp.png"],
+  },
+  alternates: { canonical: "https://localhost:3000" },
 };
+// TODO: images、urlの設定を追加する
 
 export default function RootLayout({
   children,
@@ -36,6 +54,7 @@ export default function RootLayout({
         <Header />
         {children}
       </body>
+      {/* <GoogleTagManager gtmId="GTM-55Q5FK2W" /> */}
     </html>
   );
 }

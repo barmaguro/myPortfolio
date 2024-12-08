@@ -64,3 +64,20 @@ export const getCategoryDetail = async (
   });
   return detailData;
 }
+
+
+export const getAllWorksList = async () => {
+  const listData = await client.getAllContents<Works>({
+    endpoint: 'works',
+  });
+
+  return listData;
+};
+
+export const getAllCategoryList = async () => {
+  const listData = await client.getAllContents<Category>({
+    endpoint: 'categories',
+  });
+
+  return listData;
+};
