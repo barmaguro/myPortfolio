@@ -1,47 +1,37 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 function KeyVisual() {
-  const [headerOffsetHeight, setHeaderOffsetHeight] = useState(0);
+  // const [headerOffsetHeight, setHeaderOffsetHeight] = useState(0);
 
-  useEffect(() => {
-    const header = document.querySelector("header");
-    if (header) {
-      setHeaderOffsetHeight(header.offsetHeight);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const header = document.querySelector("header");
+  //   if (header) {
+  //     setHeaderOffsetHeight(header.offsetHeight);
+  //   }
+  // }, []);
 
   return (
     <>
-      <div
-        className="grid grid-rows-[1fr_20px] place-items-center px-6 py-5  border-primary"
-        style={{
-          height: `calc(100svh - ${headerOffsetHeight}px)`,
-        }}
-      >
-        <div className="flex flex-col gap-3 items-center justify-center h-[90%] w-full max-h-[576px] px-4 border-primary border relative top_kv-pseudo shadow-md -z-10">
-          <div className="">
-            <h1 className="text-4xl text-primary">
-              Moto Design <br />
-              Portfolio
-            </h1>
-            <p className="text-lg text-secondary">
-              Thanks for visiting my website!
-            </p>
-          </div>
-          <div className="max-w-48">
+      <div className="relative gird place-items-center overflow-hidden h-[calc(100svh_-_64px)] ">
+        <div className="absolute top-1/2 -translate-y-1/2 w-full text-[0] leading-[0] align-bottom ">
+          <span className="h-[200px] bg-primary block global_clip-top"></span>
+          <span className="h-[243px]  bg-primary block"></span>
+          <span className=" bg-primary block global_clip-bottom h-[200px] "></span>
+        </div>
+        <div className="relative top-1/2 -translate-y-1/2">
+          <div className="w-[200px]">
             <Image
-              src="/images/logo.svg"
+              src="/images/logo_main.png"
+              alt="ロゴ"
               width={500}
               height={500}
-              alt="motodesignのロゴ"
-              className="h-full w-full"
             />
           </div>
-        </div>
-        <div className="h-6 place-self-end">
-          <a className="text-lg uppercase underline font-bold">about me</a>
+          <p className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-16 text-white text-xl font-bold tracking-widest  leading-loose ">
+            想いを届ける
+            <br />
+            WEBデザイン
+          </p>
         </div>
       </div>
     </>

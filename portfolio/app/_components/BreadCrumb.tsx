@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,15 +10,36 @@ import {
 } from "@/components/ui/breadcrumb";
 
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { generateBreadcrumbs } from "./_libs/utils";
 
 function BreadCrumb() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const pathName = usePathname();
   const breadcrumbPaths = generateBreadcrumbs(pathName);
 
   return (
-    <div className="border-b-1 border-primary max-w-screen-xl px-4 py-5">
+    <div className={`sticky -z-10 max-w-screen-sm px-5 bg-background transition-transform duration-500 py-4 ${isVisible ? 'translate-y-0' : '-translate-y-[110%]'}`}>
       <Breadcrumb>
         <BreadcrumbList>
           {breadcrumbPaths.map(({ path, label }, index) => (
