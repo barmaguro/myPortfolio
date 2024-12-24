@@ -1,3 +1,4 @@
+"use client";
 import {
   getCategoryDetail,
   getWorksList,
@@ -16,7 +17,6 @@ type Props = {
 
 export default async function page({ params }: Props) {
   const category = await getCategoryDetail(params.id).catch(notFound);
-
   const { contents: works, totalCount } = await getWorksList({
     limit: WORKS_LIST_LIMIT,
     filters: `category[equals]${category.id}`,

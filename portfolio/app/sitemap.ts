@@ -5,12 +5,13 @@ import {
 } from "./_components/_libs/microcms";
 
 // TODO:urlの設定
-const buildUrl = (path?: string) => `http://localhost:3000${path ?? ""}`;
+const buildUrl = (path?: string) =>
+  `http://localhost/3000${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const worksContents = await getAllWorksList();
   const categoryContents = await getAllCategoryList();
-
+  
   const worksUrls: MetadataRoute.Sitemap = worksContents.map((content) => ({
     url: buildUrl(`/works/${content.id}`),
     lastModified: content.revisedAt,

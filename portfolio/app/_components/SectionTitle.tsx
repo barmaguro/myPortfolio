@@ -4,8 +4,8 @@ type Title = {
 
 const SectionTitle = (props: Title) => {
   return (
-    <div className="flex justify-center items-center  border-y-1 border-primary py-10">
-      <h2 className="text-2xl uppercase">{props.title}</h2>
+    <div className="flex justify-center items-center relative ">
+      <h2 className="text-2xl uppercase font-bold text-secondary tracking-widest">{props.title}</h2>
     </div>
   );
 };

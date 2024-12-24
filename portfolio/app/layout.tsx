@@ -1,29 +1,18 @@
-// import localFont from "next/font/local";
-// import { GoogleTagManager } from '@next/third-parties/google';
-import Header from "app/_components/Header";
 import type { Metadata } from "next";
-import { Inconsolata } from "next/font/google";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 import React from "react";
 
+import Header from "./_components/Header";
 import "./globals.css";
+import Footer from "./_components/Footer";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
-const InconsolataFont = Inconsolata({
+const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://localhost:3000"),
+  metadataBase: new URL("https://localhost/3000"),
   title: {
     template: "%s | MotoDesignのポートフォリオ",
     default: "MotoDesignのポートフォリオ",
@@ -39,7 +28,7 @@ export const metadata: Metadata = {
       "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
     images: ["/dynamic/ogp.png"],
   },
-  alternates: { canonical: "https://localhost:3000" },
+  alternates: { canonical: "https://localhost/3000" },
 };
 // TODO: images、urlの設定を追加する
 
@@ -50,9 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${InconsolataFont.className} text-primary`}>
+      <body className={`${ZenKakuGothicNew.className}`}>
         <Header />
         {children}
+        <Footer />
       </body>
       {/* <GoogleTagManager gtmId="GTM-55Q5FK2W" /> */}
     </html>

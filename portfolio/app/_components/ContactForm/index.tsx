@@ -23,59 +23,94 @@ export default function ContactForm() {
 
   return (
     <>
-      <form action={formAction} className="">
-        <div className="container [&>div]:mt-5">
-          <div className="flex gap-2 ">
-            <label htmlFor="lastname" className="">
-              性
-            </label>
+      <form action={formAction} className="mt-8">
+        <div className="container [&>div]:mt-6">
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <label htmlFor="firstname" className="text-lg">
+                お名前
+              </label>
+              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+                必須
+              </span>
+            </div>
             <input
               type="text"
-              className="border border-primary"
-              id="lastname"
-              name="lastname"
-            />
-          </div>
-          <div className="flex gap-2">
-            <label htmlFor="firstname" className="">
-              名
-            </label>
-            <input
-              type="text"
-              className="border border-primary"
+              className="border border-primary h-8 px-2 py-1"
               id="firstname"
               name="firstname"
             />
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+              <span className="block">ex)</span>
+              <span className="block">田中 太郎</span>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="company">会社名</label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              className="border border-primary"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="email">メールアドレス</label>
+          {/* contact-1 */}
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <label htmlFor="email" className="text-lg">
+                メールアドレス
+              </label>
+              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+                必須
+              </span>
+            </div>
             <input
               type="email"
+              className="border border-primary h-8 px-2 py-1"
               id="email"
               name="email"
-              className="border border-primary"
             />
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+              <span className="block">ex)</span>
+              <span className="block">xxxx@sample.com</span>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="message">メッセージ</label>
+          {/* contact-2 */}
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <label htmlFor="company" className="text-lg">
+                会社名
+              </label>
+            </div>
+            <input
+              type="text"
+              className="border border-primary h-8 px-2 py-1"
+              id="company"
+              name="company"
+            />
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+              <span className="block">ex)</span>
+              <span className="block">株式会社Sample</span>
+            </div>
+          </div>
+          {/* contact-3 */}
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <label htmlFor="firstname" className="text-lg">
+                お問い合わせ内容
+              </label>
+              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+                必須
+              </span>
+            </div>
             <textarea
-              className="border border-primary"
+              className="border border-primary  px-2 py-1"
+              rows={10}
               id="message"
               name="message"
             />
           </div>
-          <div className="">
+          {/* contact-4 */}
+          <div className="grid place-items-center mt-12">
             {state.status === "error" && <p className="">{state.message}</p>}
-            <input type="submit" value="送信する" className="" />
+            <button
+              type="submit"
+              value="送信する"
+              className="bg-primary text-white rounded-lg py-4 px-6 w-full max-w-52 "
+            >
+              送信する
+            </button>
           </div>
         </div>
       </form>

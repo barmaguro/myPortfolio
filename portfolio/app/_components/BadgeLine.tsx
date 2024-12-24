@@ -13,10 +13,10 @@ type BadgeLineType = {
       <div key={index}>
         {BadgeLineArray.map((list, index) => (
           <div key={index}>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-x-2 gap-y-3">
               {Object.keys(list).map((key, i) => (
                 list[key].map((item, j) => (
-                  <li key={`${i}-${j}`} className="py-1 px-4 border-1 border-secondary text-secondary text-sm rounded-full w-fit">
+                  <li key={`${i}-${j}`} className="py-1 px-4 bg-accentLight text-secondary text-sm rounded-full w-fit">
                     {item}
                   </li>
                 ))
