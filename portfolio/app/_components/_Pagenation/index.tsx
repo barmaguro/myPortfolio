@@ -22,15 +22,15 @@ export default function Pagenation({
 
   return (
     <nav>
-      <ul className="container flex gap-2">
+      <ul className="container mx-auto flex gap-6 justify-center items-center mt-10"> 
         {pages.map((p) => (
-          <li className="" key={p}>
+          <li key={p} className="text-xl">
             {current !== p ? (
-              <Link href={`${basePath}/p/${p}`} >
+              <Link href={`${basePath}/p/${p}`} className="size-10 flex items-center justify-center rounded-full border"  >
                 {p}
               </Link>
             ) : (
-              <span className="bg-primary text-white">{p}</span>
+              <span className="bg-primary text-white size-10 flex items-center justify-center rounded-full border-primary">{p}</span>
             )}
           </li>
         ))}

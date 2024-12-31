@@ -10,7 +10,7 @@ import WorksCard from "./WorksCard";
 export default function WorksTabContent({ site, design, support }: any) {
   
   return (
-    <div>
+    <div className="mt-5 mx-auto lg:relative lg:before:block lg:before:absolute lg:before:top-0 lg:before:-left-12 lg:before:bg-slate-400 lg:before:w-px lg:before:h-full">
       <TabsContent value="works-site">
         <Carousel>
           <CarouselContent>

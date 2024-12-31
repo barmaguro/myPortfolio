@@ -36,11 +36,11 @@ export default function ContactForm() {
             </div>
             <input
               type="text"
-              className="border border-primary h-8 px-2 py-1"
+              className="border border-primary h-8 px-2 py-1 md:h-10"
               id="firstname"
               name="firstname"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
               <span className="block">ex)</span>
               <span className="block">田中 太郎</span>
             </div>
@@ -57,11 +57,11 @@ export default function ContactForm() {
             </div>
             <input
               type="email"
-              className="border border-primary h-8 px-2 py-1"
+              className="border border-primary h-8 px-2 py-1 md:h-10"
               id="email"
               name="email"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest  md:text-base">
               <span className="block">ex)</span>
               <span className="block">xxxx@sample.com</span>
             </div>
@@ -75,11 +75,11 @@ export default function ContactForm() {
             </div>
             <input
               type="text"
-              className="border border-primary h-8 px-2 py-1"
+              className="border border-primary h-8 px-2 py-1 md:h-10"
               id="company"
               name="company"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest">
+            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
               <span className="block">ex)</span>
               <span className="block">株式会社Sample</span>
             </div>

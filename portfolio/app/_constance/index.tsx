@@ -1,1 +1,1 @@
-export const WORKS_LIST_LIMIT = 2;
+export const WORKS_LIST_LIMIT = 6;

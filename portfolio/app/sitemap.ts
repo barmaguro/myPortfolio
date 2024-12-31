@@ -4,9 +4,8 @@ import {
   getAllWorksList,
 } from "./_components/_libs/microcms";
 
-// TODO:urlの設定
 const buildUrl = (path?: string) =>
-  `http://localhost/3000${path ?? ""}`;
+  `https://www.motodesgin.site/${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const worksContents = await getAllWorksList();
