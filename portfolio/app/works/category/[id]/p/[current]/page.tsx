@@ -4,9 +4,9 @@ import {
 } from "app/_components/_libs/microcms";
 import Pagenation from "app/_components/_Pagenation";
 import Category from "app/_components/Category";
+import WorksList from "app/_components/WorksList";
 import { WORKS_LIST_LIMIT } from "app/_constance";
 import { notFound } from "next/navigation";
-import WorksList from "app/_components/WorksList";
 
 type Props = {
   params: {

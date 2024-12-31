@@ -1,9 +1,12 @@
 export enum PageRoute {
-  
     HOME = "/",
-    ABOUT = "/about",
-    BLOG = "/blog",
-    BLOG_DETAIL = "/blog/[id]",
+    WORKS= "/works",
+    CATEGORY_SUPPORT= "/works/category/works-support",
+    CATEGORY_DESIGN= "/works/category/works-design",
+    CATEGORY_SITE= "/works/category/works-site",
+    WORKS_DETAIL= "/works/[id]",
+    CATEGORY_DETAIL= "/works/category/[id]",
+    CATEGORY= "/works/category",
   }
   
   /**
@@ -11,7 +14,9 @@ export enum PageRoute {
    */
   export const pageNameMap = {
     [PageRoute.HOME]: "HOME",
-    [PageRoute.ABOUT]: "ABOUT",
-    [PageRoute.BLOG]: "BLOG一覧",
-    [PageRoute.BLOG_DETAIL]: "記事詳細",
+    [PageRoute.WORKS]: "全実績一覧",
+    [PageRoute.CATEGORY_SUPPORT]: "サポートの実績一覧",
+    [PageRoute.CATEGORY_DESIGN]: "デザインの実績一覧",
+    [PageRoute.CATEGORY_SITE]: "サイト制作の実績一覧",
+    [PageRoute.WORKS_DETAIL]: `実績詳細`,
   };

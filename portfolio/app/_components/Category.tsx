@@ -1,5 +1,4 @@
-import type { Category } from "./_libs/microcms";
-import styles from "./index.module.css";
+import type { Category } from "app/_components/_libs/microcms";
 
 type Props = {
   category: Category;

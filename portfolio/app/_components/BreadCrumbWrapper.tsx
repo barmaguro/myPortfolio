@@ -13,7 +13,8 @@ import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 import { generateBreadcrumbs } from "./_libs/utils";
 
-function BreadCrumb() {
+function 
+BreadCrumb() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -39,13 +40,13 @@ function BreadCrumb() {
   const breadcrumbPaths = generateBreadcrumbs(pathName);
 
   return (
-    <div className={`sticky -z-10 max-w-screen-sm px-5 bg-background transition-transform duration-500 py-4 ${isVisible ? 'translate-y-0' : '-translate-y-[110%]'}`}>
-      <Breadcrumb>
+    <div className={`absolute w-full left-0 -z-10 bg-background transition-transform duration-500  ${isVisible ? 'translate-y-0' : '-translate-y-[110%]'}`}>
+      <Breadcrumb className="container mx-auto px-5 py-4" >
         <BreadcrumbList>
           {breadcrumbPaths.map(({ path, label }, index) => (
             <Fragment key={path}>
               {index !== 0 && <BreadcrumbSeparator />}
-              <BreadcrumbItem>
+              <BreadcrumbItem className="md:text-lg">
                 {index !== breadcrumbPaths.length - 1 && (
                   <BreadcrumbLink href={path}>{label}</BreadcrumbLink>
                 )}

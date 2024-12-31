@@ -3,10 +3,11 @@
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-
-import { cn } from "app/_components/_libs/utils";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import * as React from "react";
-import { Button } from "./button";
+
+import { Button } from "@/components/ui/button";
+import { cn } from "app/_components/_libs/utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -156,7 +157,7 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div ref={carouselRef} className="overflow-hidden lg:max-w-3xl mx-auto">
       <div
         ref={ref}
         className={cn(
@@ -205,20 +206,17 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute ",
+        "absolute size-8 lg:size-10 bg-secondary rounded-full",
         orientation === "horizontal"
-          ? "left-2 bottom-0 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "left-0 top-1/3 -translate-y-1/2 -translate-x-1/2 lg:-translate-x-full lg:top-full lg:-translate-y-full lg:translate-x-0  "
+          : "-top-12 left-0 -translate-x-1/2 rotate-90  ",
         className
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <div className="flex items-end flex-row-reverse">
-        <span className="uppercase">prev</span>
-        <span className="w-7 h-0.5 border-b-2 block border-primary leading-none relative before:w-2 before:bg-primary before:h-0.5 before:absolute before:bottom-0 before:-left-px before:-rotate-45 rounded-s-full before:rounded-full"></span>
-      </div>
+      <ArrowLeft className="size-6 lg:size-8 text-white" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -237,20 +235,17 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute",
+        "absolute size-8 lg:size-10 bg-secondary rounded-full",
         orientation === "horizontal"
-          ? "right-2 bottom-0  -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "right-0 top-1/3 -translate-y-1/2 translate-x-1/2 lg:top-full lg:-translate-y-full lg:translate-x-0  "
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 ",
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <div className="flex items-end">
-        <span className="uppercase">next</span>
-        <span className="w-7 h-0.5 border-b-2 block border-primary leading-none relative after:w-2 after:bg-primary after:h-0.5 after:absolute after:bottom-0 after:-right-px after:rotate-45 rounded-e-full after:rounded-full"></span>
-      </div>
+      <ArrowRight className="size-6 lg:size-8  text-white" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

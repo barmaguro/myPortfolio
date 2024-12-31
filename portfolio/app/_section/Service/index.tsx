@@ -22,28 +22,26 @@ const serviceContents = [
 const ServiceSection = () => {
   return (
     <>
-      <section id="service" className="mt-16">
-        <SectionTitle title="service" />
-        <div className="flex flex-col gap-12 mt-10">
-          {serviceContents.map((service, index) => (
-            <div className="">
-              <div className="" key={index}>
-                <h3 className="text-xl uppercase place-self-center font-bold">
-                  {service.title}
-                </h3>
-                <div className="mt-8 pl-6">
-                  <BadgeLine
-                    BadgeLineArray={[{ [service.title]: service.skills }]}
-                  />
-                </div>
-                <p className="whitespace-pre-line mt-8 px-4 text-sm leading-loose">
-                  {service.text}
-                </p>
+      <SectionTitle title="service" />
+      <div className="flex flex-col gap-12 mt-10">
+        {serviceContents.map((service, index) => (
+          <div className="">
+            <div className="" key={index}>
+              <h3 className="text-xl uppercase place-self-center font-bold">
+                {service.title}
+              </h3>
+              <div className="mt-8 pl-6">
+                <BadgeLine
+                  BadgeLineArray={[{ [service.title]: service.skills }]}
+                />
               </div>
+              <p className="whitespace-pre-line mt-8 px-4 text-sm  leading-loose md:text-base">
+                {service.text}
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

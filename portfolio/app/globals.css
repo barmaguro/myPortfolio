@@ -71,3 +71,17 @@ body {
   margin: 0 calc(50% - 50vw);
   width: 100vw;
 }
+
+.global_clip-path__right-arrow::before{
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  background-color: var(--primary);
+  content:"";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-46%);
+  left: -12px;
+}
+
+.global_clip-pentagon{
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}

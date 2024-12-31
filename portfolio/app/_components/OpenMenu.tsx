@@ -27,7 +27,7 @@ const navItems = [
   },
 ];
 
-export default function Hamburger() {
+export default function OpenMenu() {
   return (
     <>
       <Drawer>

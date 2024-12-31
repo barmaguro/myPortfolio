@@ -26,7 +26,7 @@ export default async function Works() {
     <>
       <SectionTitle title="works" />
       <div className="px-4 mt-5">
-        <Tabs defaultValue={category[0].id} className="">
+        <Tabs defaultValue={category[0].id} className="lg:flex lg:gap-5 lg:justify-between lg:items-start">
           <WorksTab category={category} />
           <WorksTabContent
             site={worksSite}

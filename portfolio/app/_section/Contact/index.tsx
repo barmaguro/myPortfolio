@@ -6,7 +6,7 @@ export default function index() {
   return (
     <div>
       <SectionTitle title="contact" />
-      <p className="text-sm tracking-widest leading-loose mt-10">
+      <p className="text-sm tracking-widest leading-loose mt-10 md:text-base">
         お問い合わせは下記のフォームかXのDMでご連絡ください。
       </p>
       <div className="flex items-center justify-center gap-4 mt-8">
@@ -18,7 +18,7 @@ export default function index() {
             height={2453}
           />
         </div>
-       <p className=" font-bold">@motodesign</p>
+       <p className=" font-bold md:text-lg">@motodesign</p>
       </div>
       <ContactForm />
     </div>

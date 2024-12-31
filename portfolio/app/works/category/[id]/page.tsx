@@ -1,4 +1,4 @@
-"use client";
+
 import {
   getCategoryDetail,
   getWorksList,
@@ -23,8 +23,8 @@ export default async function page({ params }: Props) {
   });
   return (
     <>
-      <p>
-        <Category category={category} /> の一覧
+      <p className="mt-20 text-center font-medium text-secondary text-lg">
+        <Category category={category} />
       </p>
       <WorksList works={works} />
       <Pagenation
