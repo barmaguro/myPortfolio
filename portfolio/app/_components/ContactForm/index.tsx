@@ -41,7 +41,7 @@ export default function ContactForm() {
               name="firstname"
             />
             <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
-              <span className="block">ex)</span>
+              <span className="block">ex.</span>
               <span className="block">田中 太郎</span>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function ContactForm() {
               name="email"
             />
             <div className="text-zinc-500 text-xs flex gap-2 tracking-widest  md:text-base">
-              <span className="block">ex)</span>
+              <span className="block">ex.</span>
               <span className="block">xxxx@sample.com</span>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
               name="company"
             />
             <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
-              <span className="block">ex)</span>
+              <span className="block">ex.</span>
               <span className="block">株式会社Sample</span>
             </div>
           </div>

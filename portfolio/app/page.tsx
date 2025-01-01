@@ -12,22 +12,22 @@ type Props = {
   };
 };
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="mx-auto">
       <KeyVisual />
-      <section className=" px-4 lg:max-w-xl mx-auto">
+      <section className=" px-4 max-w-lg lg:max-w-xl mx-auto">
         <Concept />
       </section>
       <section
         id="service"
-        className=" px-4 mt-16 md:mt-32 max-w-md mx-auto"
+        className=" px-4 mt-16 md:mt-32 max-w-lg mx-auto"
       >
         <Service />
       </section>
       <section
         id="works"
-        className=" px-4 mt-16 md:mt-32 max-w-md lg:max-w-5xl mx-auto"
+        className=" px-4 mt-16 md:mt-32 max-w-lg lg:max-w-5xl mx-auto"
       >
         <Works />
       </section>
