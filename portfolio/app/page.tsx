@@ -21,7 +21,7 @@ export default function Page() {
       </section>
       <section
         id="service"
-        className=" px-4 mt-16 md:mt-32 max-w-lg mx-auto"
+        className=" px-4 mt-16 md:mt-32 max-w-lg mx-auto  lg:max-w-5xl"
       >
         <Service />
       </section>
