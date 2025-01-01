@@ -5,27 +5,10 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { navItems } from "app/_components/_libs/navigation";
 import Link from "next/link";
 import CategoryList from "./CategoryList";
 
-const navItems = [
-  {
-    label: "Service",
-    href: "#service",
-  },
-  {
-    label: "Works",
-    href: "#works",
-  },
-  {
-    label: "About",
-    href: "#about",
-  },
-  {
-    label: "Contact",
-    href: "#Contact",
-  },
-];
 
 export default function OpenMenu() {
   return (
