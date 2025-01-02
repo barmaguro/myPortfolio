@@ -23,7 +23,7 @@ export default async function page({ params }: Props) {
   });
   return (
     <>
-      <p className="mt-20 text-center font-medium text-secondary text-lg">
+      <p className="mt-20 text-center text-lg font-medium text-secondary">
         <Category category={category} />
       </p>
       <WorksList works={works} />

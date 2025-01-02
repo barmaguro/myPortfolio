@@ -25,12 +25,14 @@ export default async function Works() {
   return (
     <>
       <SectionTitle title="works" />
-      <div className="px-4 mt-5">
-        <Tabs defaultValue={category[0].id} className="lg:flex lg:gap-5 lg:justify-between lg:items-start">
+      <div className="mt-8 px-4">
+        <Tabs defaultValue={category[0].id} className="lg:flex lg:items-start lg:justify-between lg:gap-5">
           <WorksTab category={category} />
           <WorksTabContent
             site={worksSite}
             design={worksDesign}
+
+            
             support={worksSupport}
           />
         </Tabs>

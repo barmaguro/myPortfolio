@@ -14,16 +14,16 @@ export default function OpenMenu() {
   return (
     <>
       <Drawer>
-        <DrawerTrigger className="w-12 h-12 rounded-full bg-primary text-white border-transparent">
+        <DrawerTrigger className="size-12 rounded-full border-transparent bg-primary text-white">
           menu
         </DrawerTrigger>
         <DrawerContent>
           <nav className="">
-            <ul className="flex flex-col gap-4 items-start w-fit mx-auto py-5">
+            <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
               {navItems.map((item, index) => (
                 <>
                   <li className="text-lg text-secondary " key={index}>
-                    <Link href={item.href} className="flex gap-3 items-center">
+                    <Link href={item.href} className="flex items-center gap-3">
                       <p>{item.label}</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export default function OpenMenu() {
           <DrawerClose className="py-6">
             <Button
               variant="outline"
-              className=" w-12 h-12 rounded-full bg-secondary text-white"
+              className=" size-12 rounded-full bg-secondary text-white"
             >
               close
             </Button>

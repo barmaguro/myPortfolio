@@ -30,17 +30,17 @@ export default function ContactForm() {
               <label htmlFor="firstname" className="text-lg">
                 お名前
               </label>
-              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+              <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-xs text-white">
                 必須
               </span>
             </div>
             <input
               type="text"
-              className="border border-primary h-8 px-2 py-1 md:h-10"
+              className="h-8 border border-primary px-2 py-1 md:h-10"
               id="firstname"
               name="firstname"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
+            <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
               <span className="block">田中 太郎</span>
             </div>
@@ -51,17 +51,17 @@ export default function ContactForm() {
               <label htmlFor="email" className="text-lg">
                 メールアドレス
               </label>
-              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+              <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-xs text-white">
                 必須
               </span>
             </div>
             <input
               type="email"
-              className="border border-primary h-8 px-2 py-1 md:h-10"
+              className="h-8 border border-primary px-2 py-1 md:h-10"
               id="email"
               name="email"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest  md:text-base">
+            <div className="flex gap-2 text-xs tracking-widest text-zinc-500  md:text-base">
               <span className="block">ex.</span>
               <span className="block">xxxx@sample.com</span>
             </div>
@@ -75,11 +75,11 @@ export default function ContactForm() {
             </div>
             <input
               type="text"
-              className="border border-primary h-8 px-2 py-1 md:h-10"
+              className="h-8 border border-primary px-2 py-1 md:h-10"
               id="company"
               name="company"
             />
-            <div className="text-zinc-500 text-xs flex gap-2 tracking-widest md:text-base">
+            <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
               <span className="block">株式会社Sample</span>
             </div>
@@ -90,7 +90,7 @@ export default function ContactForm() {
               <label htmlFor="firstname" className="text-lg">
                 お問い合わせ内容
               </label>
-              <span className="text-xs grid place-items-center px-3 py-1 bg-warning text-white rounded-lg">
+              <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-xs text-white">
                 必須
               </span>
             </div>
@@ -102,12 +102,12 @@ export default function ContactForm() {
             />
           </div>
           {/* contact-4 */}
-          <div className="grid place-items-center mt-12">
+          <div className="mt-12 grid place-items-center">
             {state.status === "error" && <p className="">{state.message}</p>}
             <button
               type="submit"
               value="送信する"
-              className="bg-primary text-white rounded-lg py-4 px-6 w-full max-w-52 "
+              className="w-full max-w-52 rounded-lg bg-primary px-6 py-4 text-white "
             >
               送信する
             </button>

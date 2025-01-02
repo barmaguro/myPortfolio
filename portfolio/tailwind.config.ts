@@ -73,6 +73,19 @@ const config: Config = {
       fontSize: {
         "2xs": "0.625rem", //10px
       },
+      animation: {
+        "rotate-hor-center": "rotate-hor-center 1s cubic-bezier(0,1.22,1,.99) both",
+      },
+      keyframes: {
+          "rotate-hor-center": {
+              from: {
+                  transform: "rotateX(0)",
+              },
+              to: {
+                  transform: "rotateX(-1440deg)"
+              }
+          }
+      }
     },
   },
 };

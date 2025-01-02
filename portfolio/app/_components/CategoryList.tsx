@@ -6,7 +6,7 @@ export default async function CategoryList() {
 
   return (
     <>
-      <ul className="flex flex-col gap-2 md:gap-4 mt-2">
+      <ul className="mt-2 flex flex-col gap-2 md:gap-4">
         <li>
           <Link href={"/works"} className="flex items-center gap-1 underline">
             <svg

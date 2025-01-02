@@ -38,7 +38,7 @@ function SearchFieldComponent() {
           </svg>
           <input
             type="text"
-            className="border-2 border-gray-300 rounded-md p-2"
+            className="rounded-md border-2 border-gray-300 p-2"
             name="q"
             defaultValue={searchParams.get("q") ?? undefined}
             placeholder="キーワードを入力"

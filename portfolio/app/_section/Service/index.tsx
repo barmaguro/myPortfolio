@@ -31,22 +31,22 @@ const ServiceSection = () => {
   return (
     <>
       <SectionTitle title="service" />
-      <div className="flex flex-col items-center gap-20 mt-20 lg:flex-row lg:justify-center lg:items-start">
+      <div className="mt-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start lg:justify-center">
         {serviceContents.map((service, index) => (
             <div className="lg:w-72" key={index}>
               <div className="relative">
-                <span className="absolute text-3xl font-bold tracking-widest text-primary opacity-50 left-1/2 -translate-x-1/2 -top-2/3 -translate-y-1/2 -z-10">{service.titleSub}</span>
-                <h3 className={`text-xl uppercase place-self-center  font-medium `}>
+                <span className="absolute -top-2/3 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 text-3xl font-bold tracking-widest text-primary opacity-50">{service.titleSub}</span>
+                <h3 className={`place-self-center text-xl font-medium  uppercase `}>
                   {service.title}
                 </h3> 
               </div>
-              <div className="w-full mt-5">
+              <div className="mt-5 w-full">
                     <Image
                                   src={service.url}
                                   alt={`${service.title}の画像`}
                                   width={480}
                                   height={300}
-                                  className="w-full h-full object-cover"
+                                  className="size-full object-cover"
                                 />
               </div>
               <div className="mt-8 pl-6">
@@ -54,7 +54,7 @@ const ServiceSection = () => {
                   BadgeLineArray={[{ [service.title]: service.skills }]}
                 />
               </div>
-              <p className="whitespace-pre-line mt-4 px-4 leading-loose md:text-base">
+              <p className="mt-4 whitespace-pre-line px-4 leading-loose md:text-base">
                 {service.text}
               </p>
             </div>

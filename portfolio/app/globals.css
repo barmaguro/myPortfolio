@@ -60,6 +60,10 @@ body {
   }
 }
 
+:root{
+  --scaleX:0;
+}
+
 .global_clip-top {
   clip-path: polygon(100% 30%, 0% 100%, 100% 100%);
 }
@@ -77,11 +81,11 @@ body {
   background-color: var(--primary);
   content:"";
   position: absolute;
-  top: 50%;
-  transform: translateY(-46%);
-  left: -12px;
+  top: 25%;
+  left: -16px;
 }
 
 .global_clip-pentagon{
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 } 
+

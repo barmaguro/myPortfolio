@@ -11,7 +11,7 @@ type Props = {
 export default function Article({ data }: Props) {
   return (
     <>
-      <div className="max-w-xl mx-auto">
+      <div className="mx-auto max-w-xl">
         <h1>{data.title}</h1>
         <div className="">
           <Image
