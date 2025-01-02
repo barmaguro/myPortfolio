@@ -15,28 +15,28 @@ export default function WorksList({ works }: Props) {
   }
   return (
     <>
-      <div className="lg:flex lg:flex-wrap lg:gap-6 mx-auto px-4 max-w-sm lg:max-w-5xl lg:justify-center">
+      <div className="mx-auto max-w-sm px-4 lg:flex lg:max-w-5xl lg:flex-wrap lg:justify-center lg:gap-6">
         {works.map((works) => (
-          <div className="mt-10 lg:mt-16 max-w-sm flex flex-col justify-center">
-            <div className="lg:w-fit lg:mx-auto flex flex-col lg:flex-grow">
-              <div className="flex flex-col lg:flex-grow">
+          <div className="mt-10 flex max-w-sm flex-col justify-center lg:mt-16">
+            <div className="flex flex-col lg:mx-auto lg:w-fit lg:grow">
+              <div className="flex flex-col lg:grow">
                 <div className="h-fit">
                   <h3 className="text-xl font-medium lg:text-xl">
                     {works.title}
                   </h3>
-                  <div className="flex items-center justify-between mt-4">
+                  <div className="mt-4 flex items-center justify-between">
                   <Date date={works.publishedAt ?? works.createdAt} />
                   <Link
                     href={`/works/category/${works.category.id}`}
-                    className="bg-primary text-white py-1 px-4 text-sm rounded-full block w-fit"
+                    className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
                   >
                     <Category category={works.category} />
                   </Link>
                   </div>
-                  <div className="mt-4 w-full h-[300px]">
+                  <div className="mt-4 h-[300px] w-full">
                     {works.thumbnail ? (
                       <Image
-                        className="w-full h-full object-cover"
+                        className="size-full object-cover"
                         src={works.thumbnail.url}
                         alt={works.title}
                         width={works.thumbnail.width}
@@ -47,7 +47,7 @@ export default function WorksList({ works }: Props) {
                     )}
                   </div>
                 </div>
-                <div className="mt-4 lg:flex-grow">
+                <div className="mt-4 lg:grow">
                   <BadgeLine
                     BadgeLineArray={[
                       {
@@ -59,11 +59,11 @@ export default function WorksList({ works }: Props) {
                   />
                 </div>
               </div>
-              <p className="mt-5 text-sm lg:flex-grow">{works.summary}</p>
+              <p className="mt-5 text-sm lg:grow">{works.summary}</p>
             </div>
             <Link
               href={`/works/${works.id}`}
-              className="flex justify-center mt-4 font-bold bg-secondary text-sm text-white py-2 px-8 w-fit mx-auto rounded-full"
+              className="mx-auto mt-4 flex w-fit justify-center rounded-full bg-secondary px-8 py-2 text-sm font-bold text-white"
             >
               詳しくみる
             </Link>

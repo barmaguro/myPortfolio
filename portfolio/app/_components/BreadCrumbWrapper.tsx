@@ -40,7 +40,7 @@ BreadCrumb() {
   const breadcrumbPaths = generateBreadcrumbs(pathName);
 
   return (
-    <div className={`absolute w-full left-0 -z-10 bg-background transition-transform duration-500  ${isVisible ? 'translate-y-0' : '-translate-y-[110%]'}`}>
+    <div className={`absolute left-0 -z-10 w-full bg-background transition-transform duration-500  ${isVisible ? 'translate-y-0' : '-translate-y-[110%]'}`}>
       <Breadcrumb className="container mx-auto px-5 py-4" >
         <BreadcrumbList>
           {breadcrumbPaths.map(({ path, label }, index) => (

@@ -3,7 +3,7 @@ import LogoHasText from '../LogoHasText'
 
 export default function index() {
   return (
-    <div className='flex justify-between container items-baseline py-5 px-4 mt-10 mx-auto'>
+    <div className='container mx-auto mt-10 flex items-baseline justify-between px-4 py-5'>
       <LogoHasText />
       <small className='text-secondary'>&copy;2024 motodesign</small>
     </div>

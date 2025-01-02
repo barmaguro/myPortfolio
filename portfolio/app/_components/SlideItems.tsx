@@ -50,7 +50,7 @@ export default function SlideItems() {
         });
       });
       {
-        scope: isHover;
+        isHover;
       }
     });
   });
@@ -66,7 +66,7 @@ export default function SlideItems() {
     });
 
     return (
-      <div className="flex gap-2 items-center" ref={isHover}>
+      <div className="flex items-center gap-2" ref={isHover}>
         {skillList}
       </div>
     );
