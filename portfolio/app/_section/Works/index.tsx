@@ -20,19 +20,20 @@ export default async function Works() {
   }).catch(notFound);
   const { contents: worksSupport } = await getWorksList({
     filters: "category[equals]works-support",
-  }).catch(notFound);  
+  }).catch(notFound);
 
   return (
     <>
       <SectionTitle title="works" />
       <div className="mt-8 px-4">
-        <Tabs defaultValue={category[0].id} className="lg:flex lg:items-start lg:justify-between lg:gap-5">
+        <Tabs
+          defaultValue={category[0].id}
+          className="lg:flex lg:items-start lg:justify-between lg:gap-5"
+        >
           <WorksTab category={category} />
           <WorksTabContent
             site={worksSite}
             design={worksDesign}
-
-            
             support={worksSupport}
           />
         </Tabs>

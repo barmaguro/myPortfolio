@@ -28,7 +28,8 @@ export default function WorksTabContent({ site, design, support }: any) {
           <CarouselPrevious className="border-none" />
           <CarouselNext className="border-none" />
         </Carousel>
-      </TabsContent>
+          </TabsContent>
+
       <TabsContent value="works-support">
         <Carousel>
           <CarouselContent>
