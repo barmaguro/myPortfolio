@@ -15,23 +15,23 @@ export default function WorksList({ works }: Props) {
   }
   return (
     <>
-      <div className="mx-auto max-w-sm px-4 lg:flex lg:max-w-5xl lg:flex-wrap lg:justify-center lg:gap-6">
+      <div className="mx-auto mt-20 max-w-sm px-6 md:flex md:max-w-4xl  md:gap-10 lg:max-w-7xl md:flex-wrap md:justify-center">
         {works.map((works) => (
           <div className="mt-10 flex max-w-sm flex-col justify-center lg:mt-16">
-            <div className="flex flex-col lg:mx-auto lg:w-fit lg:grow">
-              <div className="flex flex-col lg:grow">
+            <div className="flex flex-col md:mx-auto md:w-fit md:grow">
+              <div className="flex flex-col md:grow">
                 <div className="h-fit">
-                  <h3 className="text-xl font-medium lg:text-xl">
+                  <h3 className="text-xl font-medium md:text-xl">
                     {works.title}
                   </h3>
                   <div className="mt-4 flex items-center justify-between">
-                  <Date date={works.publishedAt ?? works.createdAt} />
-                  <Link
-                    href={`/works/category/${works.category.id}`}
-                    className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
-                  >
-                    <Category category={works.category} />
-                  </Link>
+                    <Date date={works.publishedAt ?? works.createdAt} />
+                    <Link
+                      href={`/works/category/${works.category.id}`}
+                      className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
+                    >
+                      <Category category={works.category} />
+                    </Link>
                   </div>
                   <div className="mt-4 h-[300px] w-full">
                     {works.thumbnail ? (
@@ -47,7 +47,7 @@ export default function WorksList({ works }: Props) {
                     )}
                   </div>
                 </div>
-                <div className="mt-4 lg:grow">
+                <div className="mt-4 md:grow">
                   <BadgeLine
                     BadgeLineArray={[
                       {
@@ -59,7 +59,7 @@ export default function WorksList({ works }: Props) {
                   />
                 </div>
               </div>
-              <p className="mt-5 text-sm lg:grow">{works.summary}</p>
+              <p className="mt-5 text-sm md:grow">{works.summary}</p>
             </div>
             <Link
               href={`/works/${works.id}`}
