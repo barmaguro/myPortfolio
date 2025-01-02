@@ -14,15 +14,12 @@ export default async function WorksCard({ category }: any) {
         return (
           <CarouselItem key={index} className="h-[750px] lg:h-fit">
             <div className="lg:mx-auto lg:w-fit">
-
-                <div className="h-fit shrink-0 ">
-                  <h3 className="text-xl font-medium lg:text-xl  ">
-                         {works.title}
-                  </h3>
-                  <Date date={works.publishedAt ?? works.createdAt} />
-                <div className="mt-5 flex flex-col lg:flex-row lg:gap-6 ">
-
-                </div>
+              <div className="h-fit shrink-0">
+                <h3 className="text-xl font-medium lg:text-xl">
+                  {works.title}
+                </h3>
+                <Date date={works.publishedAt ?? works.createdAt} />
+                <div className="flex flex-col lg:flex-row lg:gap-6">
                   <div className="mt-5 h-[300px] w-full lg:w-[400px]">
                     {works.thumbnail ? (
                       <Image
@@ -45,16 +42,15 @@ export default async function WorksCard({ category }: any) {
                           ),
                         },
                       ]}
-                      />
+                    />
                   </div>
-                </div>            
-              <p className="mt-5  grow text-sm md:text-lg">
-                {works.summary}
-              </p>
+                </div>
+              </div>
+              <p className="mt-5 grow text-sm md:text-lg">{works.summary}</p>
             </div>
             <Link
               href={`works/${works.id}`}
-              className="mx-auto mt-10 flex w-fit justify-center rounded bg-secondary px-8 py-3 font-bold text-white "
+              className="mx-auto mt-10 flex w-fit justify-center rounded bg-secondary px-8 py-3 font-bold text-white"
             >
               詳しくみる
             </Link>

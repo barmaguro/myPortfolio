@@ -58,6 +58,9 @@ body {
   .clip-bg {
     @apply relative before:w-3 before:h-3 before:rounded-full before:bg-primary before:absolute before:top-1/2 before:left-0 before:-translate-x-3 before:-translate-y-1/2;
   }
+  .position-center{
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+  }
 }
 
 :root{
