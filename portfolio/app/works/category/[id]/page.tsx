@@ -1,10 +1,9 @@
-
 import {
   getCategoryDetail,
   getWorksList,
 } from "app/_components/_libs/microcms";
 import Pagenation from "app/_components/_Pagenation";
-import Category from "app/_components/Category";
+import Categories from "app/_components/Category";
 import WorksList from "app/_components/WorksList";
 import { WORKS_LIST_LIMIT } from "app/_constance";
 import { notFound } from "next/navigation";
@@ -24,7 +23,7 @@ export default async function page({ params }: Props) {
   return (
     <>
       <p className="mt-20 text-center text-2xl font-medium text-secondary">
-        <Category category={category} />
+        <Categories category={category} />
       </p>
       <WorksList works={works} />
       <Pagenation

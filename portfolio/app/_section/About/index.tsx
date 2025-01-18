@@ -11,7 +11,7 @@ export default function index() {
   return (
     <>
       <SectionTitle title="About" />
-      <div className="relative mx-auto mt-10 lg:mt-20 size-40 lg:size-48">
+      <div className="relative mx-auto mt-10 size-40 lg:mt-20 lg:size-48">
         <div className="global_overflow-view absolute top-1/2 -z-10 w-full -translate-y-[43%] align-bottom text-[0]  leading-[0]">
           <span className="global_clip-top block h-[25vh] translate-y-px bg-primary"></span>
           <span className=" global_clip-bottom block h-[25vh] bg-primary "></span>

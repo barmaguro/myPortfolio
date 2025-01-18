@@ -3,7 +3,7 @@ import {
   getWorksList,
 } from "app/_components/_libs/microcms";
 import Pagenation from "app/_components/_Pagenation";
-import Category from "app/_components/Category";
+import Categories from "app/_components/Category";
 import WorksList from "app/_components/WorksList";
 import { WORKS_LIST_LIMIT } from "app/_constance";
 import { notFound } from "next/navigation";
@@ -32,7 +32,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <p className="font-bold">
-        <Category category={category} />
+        <Categories category={category} />
         の一覧
       </p>
       <WorksList works={works} />

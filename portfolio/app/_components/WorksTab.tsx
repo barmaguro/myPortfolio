@@ -20,7 +20,7 @@ export default function WorksTab({ category }: Props) {
 
   return (
     <>
-      <TabsList className="flex w-full border-b border-gray-400 lg:border-b-0 pb-4 items-center justify-around gap-9 lg:mt-10 lg:w-[250px] lg:flex-col md:text-lg lg:text-xl lg:items-start ">
+      <TabsList className="flex w-full items-center justify-around gap-9 border-b border-gray-400 pb-4 md:text-lg lg:mt-10 lg:w-[250px] lg:flex-col lg:items-start lg:border-b-0 lg:text-xl ">
         {category.map((cat) => (
           <TabsTrigger
             onClick={() => setSelectedCategory(cat.id)}

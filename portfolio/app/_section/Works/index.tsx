@@ -27,7 +27,7 @@ export default async function Works() {
   return (
     <>
       <SectionTitle title="works" />
-      <Link href={"/works"} className="block mt-8 mx-auto">
+      <Link href={"/works"} className="mx-auto mt-8 block">
           <ButtonHover
             bgColor={"bg-primary"}
             textColor={"hover:text-primary"}

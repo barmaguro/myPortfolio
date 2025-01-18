@@ -55,7 +55,7 @@ export default function SlideItems() {
     });
   });
 
-    const skillList = skills.map((skill, index) => {
+    const skillList = skills.map((skill) => {
       const key = Object.keys(skill)[0];
       const value = Object.values(skill)[0];
       return (

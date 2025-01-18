@@ -30,7 +30,7 @@ const ServiceSection = () => {
   return (
     <>
       <SectionTitle title="service" />
-      <div className="mt-20 lg:mt-40 grid lg:grid-cols-3 gap-20 lg:gap-6">
+      <div className="mt-20 grid gap-20 lg:mt-40 lg:grid-cols-3 lg:gap-6">
         {serviceContents.map((service, index) => (
           <div className="" key={index}>
             <div className="relative">
