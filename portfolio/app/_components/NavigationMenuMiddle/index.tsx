@@ -18,15 +18,15 @@ export default function index() {
                 multipleMenu(item)
               ) : (
                 <li className="" key={index}>
-                  <Link href={item.href} className="flex items-center gap-1 group">
-                    <p className="text-lg lg:text-xl text-secondary group-hover:text-accent transition">{item.label}</p>
+                  <Link href={item.href} className="group flex items-center gap-1">
+                    <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">{item.label}</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-5 lg:size-7 group-hover:animate-bounce transition group-hover:text-accent"
+                      className="size-5 transition group-hover:animate-bounce group-hover:text-accent lg:size-7"
                     >
                       <path
                         strokeLinecap="round"
@@ -51,7 +51,7 @@ const multipleMenu = (item) => {
       <>
         <li>
           <HoverCard>
-            <HoverCardTrigger className="text-lg lg:text-xl text-secondary hover:text-accent">
+            <HoverCardTrigger className="text-lg text-secondary hover:text-accent lg:text-xl">
               Works
             </HoverCardTrigger>
             <HoverCardContent className=" mt-4 rounded border bg-background px-4 pb-4 pt-2">

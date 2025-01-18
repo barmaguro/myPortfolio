@@ -4,7 +4,7 @@ import { Works } from "app/_components/_libs/microcms";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonHover from "../ButtonHover";
-import Category from "../Category";
+import Categories from "../Category";
 import { getCategoryBgColor } from "../_libs/utils";
 
 type Props = {
@@ -17,9 +17,9 @@ export default function WorksList({ works }: Props) {
   }
   return (
     <>
-      <div className="mx-auto mt-10 max-w-md md:max-w-fit px-4 grid gap-y-10  md:grid-cols-2 md:gap-x-10 md:gap-y-10  lg:max-w-7xl lg:grid-cols-3">
-        {works.map((works) => (
-          <div className="mt-10 md:grid  md:grid-rows-subgrid md:row-span-6 md:gap-y-0 lg:mt-16">
+      <div className="mx-auto mt-10 grid max-w-md gap-y-10 px-4 md:max-w-fit md:grid-cols-2 md:gap-10 lg:max-w-7xl lg:grid-cols-3">
+        {works.map((works,index) => (
+          <div key={index} className="mt-10 md:row-span-6 md:grid md:grid-rows-subgrid md:gap-y-0 lg:mt-16">
             <h3 className="text-xl font-medium md:text-xl">{works.title}</h3>
             <div className="mt-4 flex items-center justify-between">
               <Date date={works.publishedAt ?? works.createdAt} />
@@ -27,7 +27,7 @@ export default function WorksList({ works }: Props) {
                 href={`/works/category/${works.category.id}`}
                 className={`block w-fit rounded-full ${getCategoryBgColor(works)} px-4 py-1 text-sm text-white`}
               >
-                <Category category={works.category} />
+                <Categories category={works.category} />
               </Link>
             </div>
             <div className="mt-4 h-auto w-full">

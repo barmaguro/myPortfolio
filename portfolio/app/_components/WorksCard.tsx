@@ -17,10 +17,10 @@ export default async function WorksCard({ category }: any) {
             key={index}
             className="grid grid-cols-1 lg:h-fit"
           >
-            <div className="grid grid-rows-subgrid row-span-6">
+            <div className="row-span-6 grid grid-rows-subgrid">
               <h3 className="text-xl font-medium lg:text-xl">{works.title}</h3>
               <Date date={works.publishedAt ?? works.createdAt} />
-              <div className="lg:flex gap-6">
+              <div className="gap-6 lg:flex">
                 <div className="mt-5 h-auto w-full lg:w-[400px]">
                   {works.thumbnail ? (
                     <Image
@@ -47,7 +47,7 @@ export default async function WorksCard({ category }: any) {
                 </div>
               </div>
               <p className="mt-5 text-base md:text-lg">{works.summary}</p>
-              <Link href={`works/${works.id}`} className="mt-8 block w-fit mx-auto">
+              <Link href={`works/${works.id}`} className="mx-auto mt-8 block w-fit">
                 <ButtonHover
                   bgColor={"bg-secondary"}
                   textColor={"hover:text-secondary"}

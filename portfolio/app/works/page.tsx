@@ -18,7 +18,7 @@ export default async function Page() {
   const categories = await getAllCategoryList();
   return (
     <>
-      <ul className="mt-20 flex justify-center items-center gap-4 flex-col container mx-auto md:flex-row">
+      <ul className="container mx-auto mt-20 flex flex-col items-center justify-center gap-4 md:flex-row">
         {categories.map((category, index) => (
           <li key={index}>
             <Link

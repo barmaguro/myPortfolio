@@ -26,7 +26,7 @@ export default function Article({ data }: Props) {
               alt={data.title}
               width={data.thumbnail.width}
               height={data.thumbnail.height}
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
             />
           </div>
           <div className="">

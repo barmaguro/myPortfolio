@@ -13,10 +13,10 @@ export default function ButtonHover({ children,bgColor, textColor ,borderColor,m
   return (
     <div className={`relative h-12 w-40 ${margin}`}>
       <span
-        className={`absolute h-full w-full ${bgColor} top-0 rounded`}
+        className={`absolute size-full ${bgColor} top-0 rounded`}
       ></span>
       <p
-        className={`absolute h-full w-full ${bgColor} flex items-center justify-center rounded text-white transition hover:-translate-x-1 hover:-translate-y-1 hover:bg-white ${textColor} ${borderColor} hover:border-2`}
+        className={`absolute size-full ${bgColor} flex items-center justify-center rounded text-white transition hover:-translate-x-1 hover:-translate-y-1 hover:bg-white ${textColor} ${borderColor} hover:border-2`}
       >
         {children}
       </p>
