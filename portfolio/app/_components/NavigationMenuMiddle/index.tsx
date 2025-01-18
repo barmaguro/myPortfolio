@@ -11,22 +11,22 @@ export default function index() {
   return (
     <>
       <nav className="">
-        <ul className="flex  gap-14 items-baseline w-fit mx-auto py-5">
+        <ul className="mx-auto  flex w-fit items-baseline gap-14 py-5">
           {navItems.map((item, index) => (
             <>
               {item.label === "Works" ? (
                 multipleMenu(item)
               ) : (
-                <li className="text-lg text-secondary " key={index}>
-                  <Link href={item.href} className="flex gap-1 items-center">
-                    <p>{item.label}</p>
+                <li className="" key={index}>
+                  <Link href={item.href} className="flex items-center gap-1 group">
+                    <p className="text-lg lg:text-xl text-secondary group-hover:text-accent transition">{item.label}</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-5 "
+                      className="size-5 lg:size-7 group-hover:animate-bounce transition group-hover:text-accent"
                     >
                       <path
                         strokeLinecap="round"
@@ -51,10 +51,10 @@ const multipleMenu = (item) => {
       <>
         <li>
           <HoverCard>
-            <HoverCardTrigger className="text-lg text-secondary">
+            <HoverCardTrigger className="text-lg lg:text-xl text-secondary hover:text-accent">
               Works
             </HoverCardTrigger>
-            <HoverCardContent className=" bg-background px-4 pt-2 pb-4 mt-4 rounded border">
+            <HoverCardContent className=" mt-4 rounded border bg-background px-4 pb-4 pt-2">
               <CategoryList />
             </HoverCardContent>
           </HoverCard>

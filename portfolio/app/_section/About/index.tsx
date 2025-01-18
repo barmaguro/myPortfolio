@@ -11,26 +11,26 @@ export default function index() {
   return (
     <>
       <SectionTitle title="About" />
-      <div className="w-40 h-40 mx-auto mt-12 relative">
-        <div className="absolute top-1/2 -translate-y-[43%] w-full text-[0] leading-[0] align-bottom -z-10  global_overflow-view">
-          <span className="h-[25vh] bg-primary block global_clip-top translate-y-px"></span>
-          <span className=" bg-primary block global_clip-bottom h-[25vh] "></span>
+      <div className="relative mx-auto mt-10 lg:mt-20 size-40 lg:size-48">
+        <div className="global_overflow-view absolute top-1/2 -z-10 w-full -translate-y-[43%] align-bottom text-[0]  leading-[0]">
+          <span className="global_clip-top block h-[25vh] translate-y-px bg-primary"></span>
+          <span className=" global_clip-bottom block h-[25vh] bg-primary "></span>
         </div>
         <Image
           src="/images/icon_main.jpg"
-          className="w-full h-full object-cover rounded-full"
-          alt="江田企毅のアイコン"
+          className="size-full rounded-full object-cover"
+          alt="江田企毅の写真"
           width={1800}
           height={1800}
         />
       </div>
-      <div className="mx-auto mt-20 max-w-[400px] tracking-widest">
-        <span className="mx-auto w-fit block">
-          <p className="font-medium text-lg md:text-xl">Eda Motoki</p>
-          <p className="font-medium text-xl md:text-2xl">江田 企毅</p>
+      <div className="mx-auto mt-20 tracking-widest">
+        <span className="mx-auto block w-fit">
+          <p className="text-lg font-medium md:text-xl">Eda Motoki</p>
+          <p className="text-xl font-medium md:text-2xl">江田 企毅</p>
         </span>
 
-        <p className="tracking-widest mt-10 w-11/12 mx-auto leading-loose md:text-lg">
+        <p className="mx-auto mt-10 px-4 leading-loose tracking-widest md:text-lg lg:text-xl/8">
           東京にてフリーランスのフロントエンドエンジニアをしています。
           <br />
           お酒が好きすぎて「sake diploma」という資格を持っています。
@@ -55,16 +55,16 @@ export default function index() {
                     strokeWidth="4"
                   />
                 </svg>
-                <span className="w-6 h-px bg-primary block"></span>
+                <span className="block h-px w-6 bg-primary"></span>
               </span>
-              <p className="text-sm tracking-[0.24em] leading-loose  md:text-base">
+              <p className="text-sm leading-loose tracking-[0.24em]  md:text-base lg:text-lg/8">
                 {career}
               </p>
             </div>
           ))}
         </div>
         <div className="mt-10 md:mt-16">
-          <h3 className="font-medium text-lg py-4 pl-2 border-b-1 border-b-border text-center md:text-2xl ">
+          <h3 className="border-b-1 border-b-border py-4 pl-2 text-center text-lg font-medium md:text-2xl  ">
             MotoDesign
           </h3>
           <div className="mt-10">
@@ -82,9 +82,9 @@ export default function index() {
                   strokeWidth="4"
                 />
               </svg>
-              <p className="md:text-lg">事業内容</p>
+              <p className="md:text-lg lg:text-xl">事業内容</p>
             </span>
-            <p className="text-sm mt-4 md:text-base leading-loose tracking-[0.2em] ">
+            <p className="mt-4 text-sm leading-loose tracking-[0.2em] md:text-base lg:text-lg">
               Web制作におけるディレクション/デザイン/コーディング/CMS導入/MEO対策
             </p>
           </div>

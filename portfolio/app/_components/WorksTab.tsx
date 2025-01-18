@@ -1,25 +1,33 @@
 "use client";
+import { useGSAP } from '@gsap/react';
 import { TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useState } from "react";
-import { Category, Works } from "./_libs/microcms";
+import { Category } from "./_libs/microcms";
 
 type Props = {
   category: Category[];
 };
 
-export default function WorksTab({ category}: Props) {
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+export default function WorksTab({ category }: Props) {
   const [selectedCategory, setSelectedCategory] = useState(category[0].id); // 選択中のカテゴリ
+
 
   return (
     <>
-      <TabsList className="gap-8 flex justify-center items-center lg:flex-col lg:w-[250px] lg:items-start lg:mt-10 ">
+      <TabsList className="flex w-full border-b border-gray-400 lg:border-b-0 pb-4 items-center justify-around gap-9 lg:mt-10 lg:w-[250px] lg:flex-col md:text-lg lg:text-xl lg:items-start ">
         {category.map((cat) => (
           <TabsTrigger
             onClick={() => setSelectedCategory(cat.id)}
             value={cat.id}
             key={cat.id}
             className={
-              selectedCategory === cat.id ? "font-medium md:text-lg scale-110 transition-transform relative global_clip-path__right-arrow before:w-2 before:h-3" : " opacity-50"
+              selectedCategory === cat.id ? "global_clip-path__right-arrow relative scale-110 whitespace-nowrap font-medium transition-transform before:h-4 before:w-3 before:animate-rotate-hor-center" : " whitespace-nowrap  opacity-50 transition hover:text-accentLight hover:opacity-100"
             }
           >
             {cat.name}

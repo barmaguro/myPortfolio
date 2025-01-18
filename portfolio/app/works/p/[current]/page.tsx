@@ -3,6 +3,7 @@ import Pagenation from "app/_components/_Pagenation";
 import { WORKS_LIST_LIMIT } from "app/_constance";
 import { notFound } from "next/navigation";
 import WorksList from "app/_components/WorksList";
+import CategoryList from "app/_components/CategoryList";
 
 type Props = {
   params: {
@@ -27,6 +28,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
+      <CategoryList />
       <WorksList works={works} />
       <Pagenation totalCount={totalCount} current={current} />
     </>

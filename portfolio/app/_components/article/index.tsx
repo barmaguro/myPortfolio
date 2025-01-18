@@ -1,10 +1,8 @@
-import { Works } from "app/_components/_libs/microcms";
-import BadgeLine from "app/_components/BadgeLine";
-import ButtonLink from "app/_components/ButtonLink";
-import Category from "app/_components/Category";
-import Link from "next/link";
 import Image from "next/image";
-import Date from "app/_components/_Date";
+import Link from "next/link";
+import { Works } from "../_libs/microcms";
+import BackButton from "../BackButton";
+import BadgeLine from "../BadgeLine";
 
 type Props = {
   data: Works;
@@ -13,29 +11,36 @@ type Props = {
 export default function Article({ data }: Props) {
   return (
     <>
-      <div className="max-w-xl mx-auto mt-20 px-4">
-        <div className="lg:w-fit lg:mx-auto">
-          <div className="flex flex-col mt-5 lg:flex-row lg:gap-6 ">
-            <div className="h-fit flex-shrink-0 ">
-              <h3 className="text-xl font-medium lg:text-xl  ">{data.title}</h3>
-              <Date date={data.publishedAt ?? data.createdAt} />
-              <div className="mt-5 w-full h-[300px] lg:w-[400px]">
-                {data.thumbnail ? (
-                  <Image
-                    className="w-full h-full object-cover"
-                    src={data.thumbnail.url}
-                    alt={data.title}
-                    width={data.thumbnail.width}
-                    height={data.thumbnail.height}
-                  />
-                ) : (
-                  <p className="">サムネイルはありません。</p>
-                )}
-              </div>
+      <div className="mx-auto mt-20 max-w-xl px-4 lg:max-w-5xl">
+        <Link
+          href={`/works/category/${data.category.id}`}
+          className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
+        >
+          {data.category.name}
+        </Link>
+        <h1 className="mt-5 pl-2 text-xl">{data.title}</h1>
+        <div className="lg:grid lg:grid-cols-2 lg:gap-10">
+          <div className="mt-5">
+            <Image
+              src={data.thumbnail.url}
+              alt={data.title}
+              width={data.thumbnail.width}
+              height={data.thumbnail.height}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="">
+            <div className="mt-5">
+              <h2 className="mt-2 text-xl">概要</h2>
+              <p className="">{data.summary}</p>
             </div>
-            <div className="">
-              <p className="mt-5 text-lg uppercase lg:mt-16">tech stack</p>
-              <div className="mt-5 ">
+            <div className="mt-5">
+              <h2 className="mt-2 text-xl">担当範囲</h2>
+              <p className="">{data.scope}</p>
+            </div>
+            <div className="mt-5">
+              <h2 className="mt-2 text-xl">主な使用技術</h2>
+              <div className="mt-4">
                 <BadgeLine
                   BadgeLineArray={[
                     {
@@ -47,16 +52,44 @@ export default function Article({ data }: Props) {
                 />
               </div>
             </div>
+            {data.linkUrl ? (
+              <Link
+                href={data.linkUrl}
+                className="mx-auto mt-10 flex w-fit justify-center rounded bg-secondary px-8 py-3 font-bold text-white"
+              >
+                サイトに移動する
+              </Link>
+            ) : (
+              <p className="">現在こちらは非公開です。</p>
+            )}
           </div>
-          <p className="mt-2 text-lg text-gray-400">カテゴリー</p>
-            <Link href={`/works/category/${data.category.id}`} className="bg-secondary text-white py-1 px-4 rounded-full mt-1 block w-fit">
-              <Category category={data.category} />
-            </Link>
-          <p className="mt-5  text-sm flex-grow md:text-lg">{data.summary}</p>
         </div>
-        <p className="w-fit mx-auto bg-secondary text-white py-3 px-8 rounded mt-10">
-          <ButtonLink href="/works">戻る</ButtonLink>
-        </p>
+
+        <div className="global_overflow-view relative w-full align-bottom text-[0] leading-[0]">
+          <p className="position-center absolute z-10 w-fit text-2xl font-medium tracking-widest text-white">
+            Requirements
+            <span className="ml-auto mt-1 block w-fit text-sm">要件定義</span>
+          </p>
+          <span className="global_clip-top block h-[25vh] translate-y-px bg-primary"></span>
+          <span className="global_clip-bottom block h-[25vh] bg-primary"></span>
+        </div>
+        <section className="mx-auto max-w-lg">
+          <div className="mt-5">
+            <h2 className="mt-2 text-xl">制作目的</h2>
+            {data.purpose}
+          </div>
+          <div className="mt-5">
+            <h2 className="mt-2 text-xl">ターゲット</h2>
+            {data.target}
+          </div>
+          <div className="mt-5">
+            <h2 className="mt-2 text-xl">そのほか</h2>
+            {data.content}
+          </div>
+        </section>
+      </div>
+      <div className="mt-10">
+        <BackButton />
       </div>
     </>
   );

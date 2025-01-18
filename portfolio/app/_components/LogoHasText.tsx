@@ -12,7 +12,7 @@ export default function LogoHasText() {
             height={500}
           />
         </div>
-        <p className="uppercase text-2xs text-secondary tracking-widest md:text-xs lg:text-sm">
+        <p className="text-2xs uppercase tracking-widest text-secondary md:text-xs lg:text-sm">
         web design<br />
         and<br />
         frontend engineer

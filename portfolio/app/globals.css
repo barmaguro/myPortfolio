@@ -58,6 +58,19 @@ body {
   .clip-bg {
     @apply relative before:w-3 before:h-3 before:rounded-full before:bg-primary before:absolute before:top-1/2 before:left-0 before:-translate-x-3 before:-translate-y-1/2;
   }
+  .position-center{
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+  }
+  .policy-head{
+    @apply mt-5 text-lg font-bold relative pl-3 before:absolute before:w-1 before:h-5/6 before:bg-primary before:left-0 before:top-1/2 before:-translate-y-1/2 before:rounded
+  }
+  .policy-desc{
+    @apply mt-4
+  }
+}
+
+:root{
+  --scaleX:0;
 }
 
 .global_clip-top {
@@ -77,11 +90,11 @@ body {
   background-color: var(--primary);
   content:"";
   position: absolute;
-  top: 50%;
-  transform: translateY(-46%);
-  left: -12px;
+  top: 25%;
+  left: -16px;
 }
 
 .global_clip-pentagon{
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-}
+} 
+

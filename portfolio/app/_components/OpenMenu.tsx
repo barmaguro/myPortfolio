@@ -5,42 +5,25 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { navItems } from "app/_components/_libs/navigation";
 import Link from "next/link";
 import CategoryList from "./CategoryList";
 
-const navItems = [
-  {
-    label: "Service",
-    href: "#service",
-  },
-  {
-    label: "Works",
-    href: "#works",
-  },
-  {
-    label: "About",
-    href: "#about",
-  },
-  {
-    label: "Contact",
-    href: "#Contact",
-  },
-];
 
 export default function OpenMenu() {
   return (
     <>
       <Drawer>
-        <DrawerTrigger className="w-12 h-12 rounded-full bg-primary text-white border-transparent">
+        <DrawerTrigger className="size-12 rounded-full border-transparent bg-primary text-white">
           menu
         </DrawerTrigger>
         <DrawerContent>
           <nav className="">
-            <ul className="flex flex-col gap-4 items-start w-fit mx-auto py-5">
+            <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
               {navItems.map((item, index) => (
                 <>
-                  <li className="text-lg text-secondary " key={index}>
-                    <Link href={item.href} className="flex gap-3 items-center">
+                  <li className="text-2xl text-secondary " key={index}>
+                    <Link href={item.href} className="flex items-center gap-3">
                       <p>{item.label}</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +31,7 @@ export default function OpenMenu() {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className={`size-4 translate-y-px ${item.label === "Works" ? "hidden" : ""}`}
+                        className={`size-6 translate-y-px ${item.label === "Works" ? "hidden" : ""}`}
                       >
                         <path
                           strokeLinecap="round"
@@ -66,7 +49,7 @@ export default function OpenMenu() {
           <DrawerClose className="py-6">
             <Button
               variant="outline"
-              className=" w-12 h-12 rounded-full bg-secondary text-white"
+              className=" size-14 rounded-full bg-secondary text-lg text-white"
             >
               close
             </Button>

@@ -17,6 +17,10 @@ export type Works = {
   category: Category;
   badgeList: { badge: string }[];
   summary: string;
+  target:string;
+  scope:string;
+  purpose:string;
+  linkUrl:string;
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
