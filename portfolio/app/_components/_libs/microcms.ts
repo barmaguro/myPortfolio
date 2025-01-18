@@ -20,7 +20,7 @@ export type Works = {
   target:string;
   scope:string;
   purpose:string;
-  designLink:string;
+  linkUrl:string;
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {

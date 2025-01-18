@@ -3,7 +3,9 @@ import Date from "app/_components/_Date";
 import { Works } from "app/_components/_libs/microcms";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonHover from "../ButtonHover";
 import Category from "../Category";
+import { getCategoryBgColor } from "../_libs/utils";
 
 type Props = {
   works: Works[];
@@ -15,57 +17,56 @@ export default function WorksList({ works }: Props) {
   }
   return (
     <>
-      <div className="mx-auto mt-20 max-w-sm px-6 md:flex md:max-w-4xl  md:gap-10 lg:max-w-7xl md:flex-wrap md:justify-center">
+      <div className="mx-auto mt-10 max-w-md md:max-w-fit px-4 grid gap-y-10  md:grid-cols-2 md:gap-x-10 md:gap-y-10  lg:max-w-7xl lg:grid-cols-3">
         {works.map((works) => (
-          <div className="mt-10 flex max-w-sm flex-col justify-center lg:mt-16">
-            <div className="flex flex-col md:mx-auto md:w-fit md:grow">
-              <div className="flex flex-col md:grow">
-                <div className="h-fit">
-                  <h3 className="text-xl font-medium md:text-xl">
-                    {works.title}
-                  </h3>
-                  <div className="mt-4 flex items-center justify-between">
-                    <Date date={works.publishedAt ?? works.createdAt} />
-                    <Link
-                      href={`/works/category/${works.category.id}`}
-                      className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
-                    >
-                      <Category category={works.category} />
-                    </Link>
-                  </div>
-                  <div className="mt-4 h-[300px] w-full">
-                    {works.thumbnail ? (
-                      <Image
-                        className="size-full object-cover"
-                        src={works.thumbnail.url}
-                        alt={works.title}
-                        width={works.thumbnail.width}
-                        height={works.thumbnail.height}
-                      />
-                    ) : (
-                      <p className="">サムネイルはありません。</p>
-                    )}
-                  </div>
-                </div>
-                <div className="mt-4 md:grow">
-                  <BadgeLine
-                    BadgeLineArray={[
-                      {
-                        [works.title]: works["badgeList"].map(
-                          (array) => array.badge
-                        ),
-                      },
-                    ]}
-                  />
-                </div>
-              </div>
-              <p className="mt-5 text-sm md:grow">{works.summary}</p>
+          <div className="mt-10 md:grid  md:grid-rows-subgrid md:row-span-6 md:gap-y-0 lg:mt-16">
+            <h3 className="text-xl font-medium md:text-xl">{works.title}</h3>
+            <div className="mt-4 flex items-center justify-between">
+              <Date date={works.publishedAt ?? works.createdAt} />
+              <Link
+                href={`/works/category/${works.category.id}`}
+                className={`block w-fit rounded-full ${getCategoryBgColor(works)} px-4 py-1 text-sm text-white`}
+              >
+                <Category category={works.category} />
+              </Link>
             </div>
-            <Link
-              href={`/works/${works.id}`}
-              className="mx-auto mt-4 flex w-fit justify-center rounded-full bg-secondary px-8 py-2 text-sm font-bold text-white"
-            >
-              詳しくみる
+            <div className="mt-4 h-auto w-full">
+              {works.thumbnail ? (
+                <Image
+                  className="size-full object-cover"
+                  src={works.thumbnail.url}
+                  alt={works.title}
+                  width={works.thumbnail.width}
+                  height={works.thumbnail.height}
+                />
+              ) : (
+                <p className="">サムネイルはありません。</p>
+              )}
+            </div>
+
+            <div className="mt-4 md:grow">
+              <BadgeLine
+                BadgeLineArray={[
+                  {
+                    [works.title]: works["badgeList"].map(
+                      (array) => array.badge
+                    ),
+                  },
+                ]}
+              />
+            </div>
+
+            <p className="mt-5 text-sm md:text-base">{works.summary}</p>
+
+            <Link href={`/works/${works.id}`} className="mt-10 block">
+              <ButtonHover
+                bgColor={"bg-secondary"}
+                textColor={"hover:text-secondary"}
+                borderColor={"hover:border-secondary"}
+                margin={"mx-auto"}
+              >
+                詳しくみる
+              </ButtonHover>
             </Link>
           </div>
         ))}

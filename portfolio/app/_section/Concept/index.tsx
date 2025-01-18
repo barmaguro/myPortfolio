@@ -6,11 +6,11 @@ export default function index() {
   return (
     <div>
       <SectionTitle title="concept" />
-      <div className="mt-10 leading-9">
+      <div className="mt-10 text-lg/9 lg:text-xl/9  ">
         <p className=" mt-8">デザインがおしゃれで目を引くのはもちろん大切なことです。</p>
         <p className=" mt-8">でも、それだけで終わってしまうと本当に求めている成果には届きません。</p>
         <p className=" mt-8">私が大切にしているのは、デザインを通して<br />
-          <Marker>
+          <Marker addClass='mt-5 lg:mt-7' >
           「何を解決したいのか」
           </Marker><br />
           をしっかり考えること。</p>

@@ -61,6 +61,12 @@ body {
   .position-center{
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
   }
+  .policy-head{
+    @apply mt-5 text-lg font-bold relative pl-3 before:absolute before:w-1 before:h-5/6 before:bg-primary before:left-0 before:top-1/2 before:-translate-y-1/2 before:rounded
+  }
+  .policy-desc{
+    @apply mt-4
+  }
 }
 
 :root{

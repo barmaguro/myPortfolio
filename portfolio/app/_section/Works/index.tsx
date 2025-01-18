@@ -3,10 +3,12 @@ import {
   getAllCategoryList,
   getWorksList,
 } from "app/_components/_libs/microcms";
+import ButtonHover from "app/_components/ButtonHover";
 import SectionTitle from "app/_components/SectionTitle";
 import WorksTab from "app/_components/WorksTab";
 import WorksTabContent from "app/_components/WorksTabContent";
 import { WORKS_LIST_LIMIT } from "app/_constance";
+import  Link  from "next/link";
 import { notFound } from "next/navigation";
 
 export default async function Works() {
@@ -25,7 +27,17 @@ export default async function Works() {
   return (
     <>
       <SectionTitle title="works" />
-      <div className="mt-8 px-4">
+      <Link href={"/works"} className="block mt-8 mx-auto">
+          <ButtonHover
+            bgColor={"bg-primary"}
+            textColor={"hover:text-primary"}
+            borderColor={"hover:border-primary"}
+            margin={"mx-auto"}
+          >
+            全ての実績一覧
+          </ButtonHover>
+        </Link>
+      <div className="mt-10 px-4 lg:mt-20">
         <Tabs
           defaultValue={category[0].id}
           className="lg:flex lg:items-start lg:justify-between lg:gap-5"

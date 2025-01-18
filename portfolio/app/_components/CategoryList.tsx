@@ -23,11 +23,11 @@ export default async function CategoryList() {
                 d="m8.25 4.5 7.5 7.5-7.5 7.5"
               />
             </svg>
-            <p className="text-sm">全実績一覧</p>
+            <p className="text-base">全実績一覧</p>
           </Link>
         </li>
         {categories.map((category, index) => (
-          <li>
+          <li key={index}>
             <Link
               href={`/works/category/${category.id}`}
               key={index}
@@ -47,7 +47,7 @@ export default async function CategoryList() {
                   d="m8.25 4.5 7.5 7.5-7.5 7.5"
                 />
               </svg>
-              <p className="text-sm md:text-base">{category.name}一覧</p>
+              <p className="text-base">{category.name}一覧</p>
             </Link>
           </li>
         ))}

@@ -6,7 +6,7 @@ export default function index() {
   return (
     <div>
       <SectionTitle title="contact" />
-      <p className="mt-10 text-sm leading-loose tracking-widest md:text-base">
+      <p className="mt-10 lg:mt-20  leading-loose tracking-widest md:text-lg lg:text-xl">
         お問い合わせは下記のフォームかXのDMでご連絡ください。
       </p>
       <div className="mt-8 flex items-center justify-center gap-4">

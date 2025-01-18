@@ -40,7 +40,12 @@ export function generateBreadcrumbs(
       }
 
       // CATEGORY_SITEなどのページの場合にWORKS_DETAILを表示しない
-      if (key === PageRoute.WORKS_DETAIL && (path.includes(PageRoute.CATEGORY_SITE) || path.includes(PageRoute.CATEGORY_SUPPORT) || path.includes(PageRoute.CATEGORY_DESIGN))) {
+      if (
+        key === PageRoute.WORKS_DETAIL &&
+        (path.includes(PageRoute.CATEGORY_SITE) ||
+          path.includes(PageRoute.CATEGORY_SUPPORT) ||
+          path.includes(PageRoute.CATEGORY_DESIGN))
+      ) {
         key = path as PageRoute;
       }
 
@@ -63,4 +68,23 @@ dayjs.extend(timezone);
 
 export const formatDate = (date: string) => {
   return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY/MM/DD");
+};
+
+export const getCategoryBgColor = (item) => {
+  const category = item.category ? item.category : item;
+
+  if (!category || !category.id) {
+    return "";
+  }
+
+  switch (category.id) {
+    case "works-site":
+      return "bg-[#39a392]";
+    case "works-design":
+      return "bg-[#4a5dab]";
+    case "works-support":
+      return "bg-[#b58fff]";
+    default:
+      return ""; // デフォルトのクラス名を返す
+  }
 };

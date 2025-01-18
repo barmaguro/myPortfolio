@@ -20,14 +20,14 @@ export default function WorksTab({ category }: Props) {
 
   return (
     <>
-      <TabsList className="flex w-full border-b border-gray-400 lg:border-b-0 pb-4 items-center justify-around gap-9 lg:mt-10 lg:w-[250px] lg:flex-col  lg:items-start ">
+      <TabsList className="flex w-full border-b border-gray-400 lg:border-b-0 pb-4 items-center justify-around gap-9 lg:mt-10 lg:w-[250px] lg:flex-col md:text-lg lg:text-xl lg:items-start ">
         {category.map((cat) => (
           <TabsTrigger
             onClick={() => setSelectedCategory(cat.id)}
             value={cat.id}
             key={cat.id}
             className={
-              selectedCategory === cat.id ? "global_clip-path__right-arrow relative scale-110 whitespace-nowrap font-medium transition-transform before:h-4 before:w-3 before:animate-rotate-hor-center md:text-lg" : " whitespace-nowrap  opacity-50"
+              selectedCategory === cat.id ? "global_clip-path__right-arrow relative scale-110 whitespace-nowrap font-medium transition-transform before:h-4 before:w-3 before:animate-rotate-hor-center" : " whitespace-nowrap  opacity-50 transition hover:text-accentLight hover:opacity-100"
             }
           >
             {cat.name}

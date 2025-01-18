@@ -8,29 +8,16 @@ function validateEmail(email: string) {
 export async function createContactData(_prevState: any, formData: FormData) {
   // formのname属性ごとにformData.get()で値を取り出すことができる
   const rawFormData = {
-    lastname: formData.get("lastname") as string,
-    firstname: formData.get("firstname") as string,
+    fullname: formData.get("fullname") as string,
     company: formData.get("company") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
+    polisycheck: formData.get("polisycheck") as string,
   };
-
-  if (!rawFormData.lastname) {
-    return {
-      status: "error",
-      message: "姓を入力してください",
-    };
-  }
-  if (!rawFormData.firstname) {
+  if (!rawFormData.fullname) {
     return {
       status: "error",
       message: "名を入力してください",
-    };
-  }
-  if (!rawFormData.company) {
-    return {
-      status: "error",
-      message: "会社名を入力してください",
     };
   }
   if (!rawFormData.email) {
@@ -51,6 +38,12 @@ export async function createContactData(_prevState: any, formData: FormData) {
       message: "メッセージを入力してください",
     };
   }
+  if (!rawFormData.polisycheck) {
+    return {
+      status: "error",
+      message: "プライバシーポリシーをお読みの上チェックをお入れください。",
+    };
+  }
 
   const result = await fetch(
     `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSP0T_PORTAL_ID}/${process.env.HUBSP0T_FORM_ID}`,
@@ -63,13 +56,8 @@ export async function createContactData(_prevState: any, formData: FormData) {
         fields: [
           {
             objectTypeId: "0-1",
-            name: "lastname",
-            value: rawFormData.lastname,
-          },
-          {
-            objectTypeId: "0-1",
-            name: "firstname",
-            value: rawFormData.firstname,
+            name: "fullname",
+            value: rawFormData.fullname,
           },
           {
             objectTypeId: "0-1",
@@ -85,6 +73,11 @@ export async function createContactData(_prevState: any, formData: FormData) {
             objectTypeId: "0-1",
             name: "message",
             value: rawFormData.message,
+          },
+          {
+            objectTypeId: "0-1",
+            name: "polisycheck",
+            value: rawFormData.polisycheck,
           },
         ],
       }),

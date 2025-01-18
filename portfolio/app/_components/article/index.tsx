@@ -14,11 +14,11 @@ export default function Article({ data }: Props) {
       <div className="mx-auto mt-20 max-w-xl px-4 lg:max-w-5xl">
         <Link
           href={`/works/category/${data.category.id}`}
-          className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white "
+          className="block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
         >
           {data.category.name}
         </Link>
-        <h1 className="text-xl mt-5 pl-2">{data.title}</h1>
+        <h1 className="mt-5 pl-2 text-xl">{data.title}</h1>
         <div className="lg:grid lg:grid-cols-2 lg:gap-10">
           <div className="mt-5">
             <Image
@@ -52,6 +52,16 @@ export default function Article({ data }: Props) {
                 />
               </div>
             </div>
+            {data.linkUrl ? (
+              <Link
+                href={data.linkUrl}
+                className="mx-auto mt-10 flex w-fit justify-center rounded bg-secondary px-8 py-3 font-bold text-white"
+              >
+                サイトに移動する
+              </Link>
+            ) : (
+              <p className="">現在こちらは非公開です。</p>
+            )}
           </div>
         </div>
 
@@ -66,28 +76,21 @@ export default function Article({ data }: Props) {
         <section className="mx-auto max-w-lg">
           <div className="mt-5">
             <h2 className="mt-2 text-xl">制作目的</h2>
-            <p className="">{data.purpose}</p>
+            {data.purpose}
           </div>
           <div className="mt-5">
             <h2 className="mt-2 text-xl">ターゲット</h2>
-            <p className="">{data.target}</p>
+            {data.target}
           </div>
           <div className="mt-5">
-          <h2 className="mt-2 text-xl">デザイン</h2>
-            {data.designLink ? (
-              <Link
-                href={data.designLink}
-                className="mx-auto mt-10 flex w-fit justify-center rounded bg-secondary px-8 py-3 font-bold text-white"
-              >
-                デザインを見る
-              </Link>
-            ) : (
-              <p className="">現在このデザインは非公開です。</p>
-            )}
+            <h2 className="mt-2 text-xl">そのほか</h2>
+            {data.content}
           </div>
         </section>
       </div>
-      <BackButton />
+      <div className="mt-10">
+        <BackButton />
+      </div>
     </>
   );
 }

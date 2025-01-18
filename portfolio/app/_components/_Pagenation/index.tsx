@@ -26,11 +26,11 @@ export default function Pagenation({
         {pages.map((p) => (
           <li key={p} className="text-xl">
             {current !== p ? (
-              <Link href={`${basePath}/p/${p}`} className="flex size-10 items-center justify-center rounded-full border"  >
+              <Link href={`${basePath}/p/${p}`} className="flex size-10 items-center justify-center rounded-full border hover:font-bold hover:border-2 hover:scale-110 transition"  >
                 {p}
               </Link>
             ) : (
-              <span className="flex size-10 items-center justify-center rounded-full border-primary bg-primary text-white">{p}</span>
+              <span className="flex size-10 items-center justify-center rounded-full border-primary bg-primary text-white hover:opacity-70 transition">{p}</span>
             )}
           </li>
         ))}

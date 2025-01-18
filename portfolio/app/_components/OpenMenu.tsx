@@ -22,7 +22,7 @@ export default function OpenMenu() {
             <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
               {navItems.map((item, index) => (
                 <>
-                  <li className="text-lg text-secondary " key={index}>
+                  <li className="text-2xl text-secondary " key={index}>
                     <Link href={item.href} className="flex items-center gap-3">
                       <p>{item.label}</p>
                       <svg
@@ -31,7 +31,7 @@ export default function OpenMenu() {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className={`size-4 translate-y-px ${item.label === "Works" ? "hidden" : ""}`}
+                        className={`size-6 translate-y-px ${item.label === "Works" ? "hidden" : ""}`}
                       >
                         <path
                           strokeLinecap="round"
@@ -49,7 +49,7 @@ export default function OpenMenu() {
           <DrawerClose className="py-6">
             <Button
               variant="outline"
-              className=" size-12 rounded-full bg-secondary text-white"
+              className=" size-14 rounded-full bg-secondary text-lg text-white"
             >
               close
             </Button>

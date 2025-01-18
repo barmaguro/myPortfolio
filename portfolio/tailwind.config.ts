@@ -73,6 +73,10 @@ const config: Config = {
       fontSize: {
         "2xs": "0.625rem", //10px
       },
+      gridTemplateRows: {
+        'auto-fill-100': 'repeat(auto-fill, minmax(100px, 1fr))',
+        'auto-fit-100': 'repeat(auto-fit, minmax(100px, 1fr))',
+      },
       animation: {
         "rotate-hor-center": "rotate-hor-center 1s cubic-bezier(0,1.22,1,.99) both",
       },
