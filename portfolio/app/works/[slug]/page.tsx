@@ -1,5 +1,5 @@
-import { getWorksDetail } from "app/_components/_libs/microcms";
-import Article from "app/_components/article";
+import Article from "@/components/article";
+import { getWorksDetail } from "@/libs/microcms";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 

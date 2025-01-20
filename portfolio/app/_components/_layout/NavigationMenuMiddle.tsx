@@ -1,25 +1,30 @@
+import CategoryList from "@/components/CategoryList";
+import { navItems } from "@/libs/navigation";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@radix-ui/react-hover-card";
-import { navItems } from "app/_components/_libs/navigation";
 import Link from "next/link";
-import CategoryList from "../CategoryList";
 
 export default function index() {
   return (
     <>
       <nav className="">
-        <ul className="mx-auto  flex w-fit items-baseline gap-14 py-5">
+        <ul className="mx-auto flex w-fit items-baseline gap-14 py-5">
           {navItems.map((item, index) => (
             <>
               {item.label === "Works" ? (
                 multipleMenu(item)
               ) : (
                 <li className="" key={index}>
-                  <Link href={item.href} className="group flex items-center gap-1">
-                    <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">{item.label}</p>
+                  <Link
+                    href={item.href}
+                    className="group flex items-center gap-1"
+                  >
+                    <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">
+                      {item.label}
+                    </p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -54,7 +59,7 @@ const multipleMenu = (item) => {
             <HoverCardTrigger className="text-lg text-secondary hover:text-accent lg:text-xl">
               Works
             </HoverCardTrigger>
-            <HoverCardContent className=" mt-4 rounded border bg-background px-4 pb-4 pt-2">
+            <HoverCardContent className="mt-4 rounded border bg-background px-4 pb-4 pt-2">
               <CategoryList />
             </HoverCardContent>
           </HoverCard>

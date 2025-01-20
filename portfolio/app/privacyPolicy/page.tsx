@@ -1,5 +1,5 @@
-import BackButton from "app/_components/BackButton";
-import SectionTitle from "app/_components/SectionTitle";
+import BackButton from "@/components/BackButton";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function index() {
   return (

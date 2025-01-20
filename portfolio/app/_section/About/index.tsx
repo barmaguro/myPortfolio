@@ -1,4 +1,4 @@
-import SectionTitle from "app/_components/SectionTitle";
+import SectionTitle from "@/components/SectionTitle";
 import Image from "next/image";
 
 const Career = [
@@ -12,9 +12,9 @@ export default function index() {
     <>
       <SectionTitle title="About" />
       <div className="relative mx-auto mt-10 size-40 lg:mt-20 lg:size-48">
-        <div className="global_overflow-view absolute top-1/2 -z-10 w-full -translate-y-[43%] align-bottom text-[0]  leading-[0]">
+        <div className="global_overflow-view absolute top-1/2 -z-10 w-full -translate-y-[43%] align-bottom text-[0] leading-[0]">
           <span className="global_clip-top block h-[25vh] translate-y-px bg-primary"></span>
-          <span className=" global_clip-bottom block h-[25vh] bg-primary "></span>
+          <span className="global_clip-bottom block h-[25vh] bg-primary"></span>
         </div>
         <Image
           src="/images/icon_main.jpg"
@@ -57,18 +57,18 @@ export default function index() {
                 </svg>
                 <span className="block h-px w-6 bg-primary"></span>
               </span>
-              <p className="text-sm leading-loose tracking-[0.24em]  md:text-base lg:text-lg/8">
+              <p className="text-sm leading-loose tracking-[0.24em] md:text-base lg:text-lg/8">
                 {career}
               </p>
             </div>
           ))}
         </div>
         <div className="mt-10 md:mt-16">
-          <h3 className="border-b-1 border-b-border py-4 pl-2 text-center text-lg font-medium md:text-2xl  ">
+          <h3 className="border-b-1 border-b-border py-4 pl-2 text-center text-lg font-medium md:text-2xl">
             MotoDesign
           </h3>
           <div className="mt-10">
-            <span className="flex items-center gap-2 ">
+            <span className="flex items-center gap-2">
               <svg
                 width="24"
                 height="24"

@@ -1,11 +1,11 @@
-import BadgeLine from "app/_components/BadgeLine";
-import Date from "app/_components/_Date";
-import { Works } from "app/_components/_libs/microcms";
+import Date from "@/components/_Date";
+import { Works } from "@/libs/microcms";
+import BadgeLine from "@/components/BadgeLine";
 import Image from "next/image";
 import Link from "next/link";
-import ButtonHover from "../ButtonHover";
-import Categories from "../Category";
-import { getCategoryBgColor } from "../_libs/utils";
+import Categories from "@/components/Category";
+import { getCategoryBgColor } from "@/libs/utils";
+import ButtonHover from "@/components/ButtonHover";
 
 type Props = {
   works: Works[];
@@ -18,8 +18,11 @@ export default function WorksList({ works }: Props) {
   return (
     <>
       <div className="mx-auto mt-10 grid max-w-md gap-y-10 px-4 md:max-w-fit md:grid-cols-2 md:gap-10 lg:max-w-7xl lg:grid-cols-3">
-        {works.map((works,index) => (
-          <div key={index} className="mt-10 md:row-span-6 md:grid md:grid-rows-subgrid md:gap-y-0 lg:mt-16">
+        {works.map((works, index) => (
+          <div
+            key={index}
+            className="mt-10 md:row-span-6 md:grid md:grid-rows-subgrid md:gap-y-0 lg:mt-16"
+          >
             <h3 className="text-xl font-medium md:text-xl">{works.title}</h3>
             <div className="mt-4 flex items-center justify-between">
               <Date date={works.publishedAt ?? works.createdAt} />

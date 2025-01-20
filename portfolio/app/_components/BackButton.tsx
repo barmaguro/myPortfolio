@@ -1,8 +1,8 @@
 "use client";
 
+import ButtonHover from "@/components/ButtonHover";
 import { useRouter } from "next/navigation";
 import React from "react";
-import ButtonHover from "../ButtonHover";
 
 const BackButton: React.FC = () => {
   const router = useRouter();
@@ -16,11 +16,13 @@ const BackButton: React.FC = () => {
   };
 
   return (
-    <ButtonHover bgColor={"bg-secondary"} textColor={"hover:text-secondary"} borderColor={"hover:border-secondary"} margin="mx-auto">
-      <button
-        onClick={handleBack}
-        className=""
-      >
+    <ButtonHover
+      bgColor={"bg-secondary"}
+      textColor={"hover:text-secondary"}
+      borderColor={"hover:border-secondary"}
+      margin="mx-auto"
+    >
+      <button onClick={handleBack} className="">
         戻る
       </button>
     </ButtonHover>

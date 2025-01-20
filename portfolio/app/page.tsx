@@ -1,10 +1,9 @@
-import KeyVisual from "app/_components/KeyVisual";
-import About from "app/_section/About";
-import Contact from "app/_section/Contact";
-import Service from "app/_section/Service";
-import Works from "app/_section/Works";
-import Concept from "./_section/Concept";
-// rafce アロー関数コンポーネントの出し方
+import KeyVisual from "@/components/KeyVisual";
+import About from "@/section/About";
+import Contact from "@/section/Contact";
+import Service from "@/section/Service";
+import Works from "@/section/Works";
+import Concept from "@/section/Concept";
 
 export default function Page() {
   return (
@@ -15,7 +14,7 @@ export default function Page() {
       </section>
       <section
         id="service"
-        className="mx-auto mt-16 max-w-lg px-4 md:mt-32 lg:max-w-6xl"
+        className="mx-auto mt-16 max-w-lg px-4 md:mt-32 lg:max-w-5xl"
       >
         <Service />
       </section>

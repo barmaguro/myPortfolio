@@ -1,5 +1,5 @@
-import BadgeLine from "app/_components/BadgeLine";
-import SectionTitle from "app/_components/SectionTitle";
+import BadgeLine from "@/components/BadgeLine";
+import SectionTitle from "@/components/SectionTitle";
 import Image from "next/image";
 
 const serviceContents = [
@@ -30,9 +30,12 @@ const ServiceSection = () => {
   return (
     <>
       <SectionTitle title="service" />
-      <div className="mt-20 grid gap-20 lg:mt-40 lg:grid-cols-3 lg:gap-6">
+      <div className="mt-20 grid gap-20 lg:mt-40 lg:grid-cols-3 lg:gap-10">
         {serviceContents.map((service, index) => (
-          <div className="" key={index}>
+          <div
+            className="lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-0"
+            key={index}
+          >
             <div className="relative">
               <span className="absolute -top-2/3 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 text-3xl font-bold tracking-widest text-primary opacity-50">
                 {service.titleSub}

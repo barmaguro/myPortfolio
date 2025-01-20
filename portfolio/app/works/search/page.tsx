@@ -1,7 +1,7 @@
-import { getWorksList } from "app/_components/_libs/microcms";
-import SearchField from "app/_components/SearchField";
-import WorksList from "app/_components/WorksList";
-import { WORKS_LIST_LIMIT } from "app/_constance";
+import SearchField from "@/components/features/works/SearchField";
+import WorksList from "@/components/features/works/WorksList";
+import { getWorksList } from "@/libs/microcms";
+import { WORKS_LIST_LIMIT } from "app/_constants";
 
 type Props = {
   searchParams: {

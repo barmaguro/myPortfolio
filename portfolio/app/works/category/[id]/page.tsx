@@ -1,11 +1,11 @@
 import {
   getCategoryDetail,
   getWorksList,
-} from "app/_components/_libs/microcms";
-import Pagenation from "app/_components/_Pagenation";
-import Categories from "app/_components/Category";
-import WorksList from "app/_components/WorksList";
-import { WORKS_LIST_LIMIT } from "app/_constance";
+} from "@/libs/microcms";
+import Pagenation from "@/components/_Pagenation";
+import Categories from "@/components/Category";
+import WorksList from "@/components/features/works/WorksList";
+import { WORKS_LIST_LIMIT } from "@/_constants";
 import { notFound } from "next/navigation";
 
 type Props = {
