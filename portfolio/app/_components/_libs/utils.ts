@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { twMerge } from "tailwind-merge";
-import { PageRoute, pageNameMap } from "./routes";
+import { PageRoute, pageNameMap } from "@/libs/routes";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -49,18 +49,25 @@ export function generateBreadcrumbs(
         key = path as PageRoute;
       }
 
+      // 特定のパスに対してラベルを上書き
       let label = pageNameMap[key] || path;
       if (key === PageRoute.WORKS_DETAIL && categoryName) {
         label = categoryName;
       } else if (key === PageRoute.WORKS && slug) {
         label = slug;
+      } else if (path === "/works/p" || path.startsWith("/works/p/")) {
+        label = "全実績一覧";
       }
 
       return {
         path: currentPath,
         label: label,
       };
-    });
+    })
+    .filter(
+      (breadcrumb, index, self) =>
+        index === self.findIndex((b) => b.label === breadcrumb.label)
+    ); // 重複するラベルを除外
 }
 
 dayjs.extend(utc);

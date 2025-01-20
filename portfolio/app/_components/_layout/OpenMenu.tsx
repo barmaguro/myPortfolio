@@ -5,10 +5,9 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { navItems } from "app/_components/_libs/navigation";
+import { navItems } from "@/libs/navigation";
 import Link from "next/link";
-import CategoryList from "./CategoryList";
-
+import CategoryList from "@/components/CategoryList";
 
 export default function OpenMenu() {
   return (
@@ -22,7 +21,7 @@ export default function OpenMenu() {
             <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
               {navItems.map((item, index) => (
                 <>
-                  <li className="text-2xl text-secondary " key={index}>
+                  <li className="text-2xl text-secondary" key={index}>
                     <Link href={item.href} className="flex items-center gap-3">
                       <p>{item.label}</p>
                       <svg
@@ -49,7 +48,7 @@ export default function OpenMenu() {
           <DrawerClose className="py-6">
             <Button
               variant="outline"
-              className=" size-14 rounded-full bg-secondary text-lg text-white"
+              className="size-14 rounded-full bg-secondary text-lg text-white"
             >
               close
             </Button>

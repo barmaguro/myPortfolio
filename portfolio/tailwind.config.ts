@@ -79,6 +79,7 @@ const config: Config = {
       },
       animation: {
         "rotate-hor-center": "rotate-hor-center 1s cubic-bezier(0,1.22,1,.99) both",
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
           "rotate-hor-center": {

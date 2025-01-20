@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 import React from "react";
 
-import Header from "./_components/Header";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
 import "./globals.css";
-import Footer from "./_components/Footer";
 
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
-  weight: ["400","500","700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {

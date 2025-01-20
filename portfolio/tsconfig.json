@@ -18,7 +18,14 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/*": ["app/*"],
+      "@/components/*": ["app/_components/*"],
+      "@/libs/*": ["app/_components/_libs/*"],
+      "@/layout/*": ["app/_components/_layout/*"],
+      "@/features/*": ["app/_components/features/*"],
+      "@/animation/*": ["app/_components/_animation/*"],
+      "@/section/*": ["app/_section/*"],
+      "@/constants/*": ["app/_constants/*"]
     },
     "resolveJsonModule": true
   },

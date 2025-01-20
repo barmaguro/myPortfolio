@@ -18,7 +18,7 @@ function KeyVisual() {
               height={500}
             />
           </div>
-          <p className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-20   whitespace-nowrap  text-xl font-medium leading-loose tracking-wide text-white mix-blend-multiply md:-translate-x-1/2 md:text-xl/10 lg:-translate-x-full lg:translate-y-12 lg:text-2xl/10">
+          <p className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-20   whitespace-nowrap  text-lg font-medium leading-loose tracking-wide text-white mix-blend-multiply md:-translate-x-1/2 md:text-xl/10 lg:-translate-x-full lg:translate-y-12 lg:text-2xl/10">
             おしゃれなだけじゃない、<br />課題を解くデザイン。
           </p>
         </div>

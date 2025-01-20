@@ -1,11 +1,8 @@
-import {
-  getAllCategoryList,
-  getWorksList,
-} from "app/_components/_libs/microcms";
-import { getCategoryBgColor } from "app/_components/_libs/utils";
-import Pagenation from "app/_components/_Pagenation";
-import WorksList from "app/_components/WorksList";
-import { WORKS_LIST_LIMIT } from "app/_constance";
+import Pagenation from "@/components/_Pagenation";
+import WorksList from "@/components/features/works/WorksList";
+import { WORKS_LIST_LIMIT } from "@/constants/index";
+import { getAllCategoryList, getWorksList } from "@/libs/microcms";
+import { getCategoryBgColor } from "@/libs/utils";
 import Link from "next/link";
 
 export const revalidate = 0;
@@ -18,7 +15,7 @@ export default async function Page() {
   const categories = await getAllCategoryList();
   return (
     <>
-      <ul className="container mx-auto mt-20 flex flex-col items-center justify-center gap-4 md:flex-row">
+      <ul className="container mx-auto mt-20 flex flex-col items-center justify-center gap-4 md:flex-row lg:mt-40 ">
         {categories.map((category, index) => (
           <li key={index}>
             <Link
@@ -27,7 +24,7 @@ export default async function Page() {
               className="flex items-center gap-1"
             >
               <p
-                className={`flex  items-center gap-4  rounded px-4 py-1 text-base text-white ${getCategoryBgColor(category)}`}
+                className={`flex items-center gap-4 rounded px-4 py-1 text-base text-white ${getCategoryBgColor(category)}`}
               >
                 {category.name}
                 <svg
@@ -39,8 +36,8 @@ export default async function Page() {
                   className="size-4 text-white"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m8.25 4.5 7.5 7.5-7.5 7.5"
                   />
                 </svg>

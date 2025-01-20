@@ -1,4 +1,4 @@
-import { getAllCategoryList } from "app/_components/_libs/microcms";
+import { getAllCategoryList } from "@/libs/microcms";
 import Link from "next/link";
 
 export default async function CategoryList() {
@@ -18,8 +18,8 @@ export default async function CategoryList() {
               className="size-3"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="m8.25 4.5 7.5 7.5-7.5 7.5"
               />
             </svg>
@@ -42,8 +42,8 @@ export default async function CategoryList() {
                 className="size-3"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="m8.25 4.5 7.5 7.5-7.5 7.5"
                 />
               </svg>

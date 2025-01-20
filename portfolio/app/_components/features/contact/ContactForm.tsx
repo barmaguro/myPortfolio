@@ -4,7 +4,7 @@ import { createContactData } from "app/_actions/contact";
 import Image from "next/image";
 import Link from "next/link";
 import { useFormState } from "react-dom";
-import ButtonHover from "../ButtonHover";
+import ButtonHover from "@/components/ButtonHover";
 
 const initialState = {
   status: "",
@@ -121,7 +121,11 @@ export default function ContactForm() {
           {/* contact-4 */}
           <div className="mt-20 grid place-items-center">
             {state.status === "error" && <p className="">{state.message}</p>}
-            <ButtonHover bgColor={"bg-primary"} textColor={"hover:text-primary"} borderColor={"hover:border-secondary"} >
+            <ButtonHover
+              bgColor={"bg-primary"}
+              textColor={"hover:text-primary"}
+              borderColor={"hover:border-secondary"}
+            >
               <button type="submit" value="送信する" className="">
                 送信する
               </button>

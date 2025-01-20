@@ -9,7 +9,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "app/_components/_libs/utils";
+import { cn } from "@/libs/utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -43,8 +43,6 @@ function useCarousel() {
 
   return context;
 }
-
-
 
 const Carousel = React.forwardRef<
   HTMLDivElement,
@@ -210,10 +208,10 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 lg:size-10 bg-secondary rounded-full",
+        "absolute size-8 rounded-full bg-secondary lg:size-10",
         orientation === "horizontal"
-          ? "left-0 top-1/3 -translate-y-1/2 -translate-x-1/2 lg:-translate-x-full lg:top-full lg:-translate-y-full lg:translate-x-0  "
-          : "-top-12 left-0 -translate-x-1/2 rotate-90  ",
+          ? "left-0 top-1/3 -translate-x-1/2 -translate-y-1/2 lg:top-full lg:-translate-x-full lg:-translate-y-full lg:translate-x-0"
+          : "-top-12 left-0 -translate-x-1/2 rotate-90",
         className
       )}
       disabled={!canScrollPrev}
@@ -239,17 +237,17 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 lg:size-10 bg-secondary rounded-full",
+        "absolute size-8 rounded-full bg-secondary lg:size-10",
         orientation === "horizontal"
-          ? "right-0 top-1/3 -translate-y-1/2 translate-x-1/2 lg:top-full lg:-translate-y-full lg:translate-x-0  "
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 ",
+          ? "right-0 top-1/3 -translate-y-1/2 translate-x-1/2 lg:top-full lg:-translate-y-full lg:translate-x-0"
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="size-6 text-white  lg:size-8" />
+      <ArrowRight className="size-6 text-white lg:size-8" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
