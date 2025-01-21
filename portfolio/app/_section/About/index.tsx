@@ -38,7 +38,7 @@ export default function index() {
         <div className="mt-10">
           {Career.map((career, index) => (
             <div
-              className="flex justify-between gap-4 [&:not(:first-child)]:mt-6"
+              className="flex gap-4 [&:not(:first-child)]:mt-6"
               key={index}
             >
               <span className="flex items-center justify-center gap-2">
