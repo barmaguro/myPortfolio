@@ -2,18 +2,18 @@
 export const navItems = [
   {
     label: "Service",
-    href: "#service",
+    href: "/#service",
   },
   {
     label: "Works",
-    href: "#works",
+    href: "/#works",
   },
   {
     label: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     label: "Contact",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
