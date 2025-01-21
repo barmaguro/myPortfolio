@@ -54,10 +54,12 @@ const multipleMenu = (item) => {
   if (item.label === "Works") {
     return (
       <>
-        <li>
-          <HoverCard>
-            <HoverCardTrigger className="text-lg text-secondary hover:text-accent lg:text-xl">
-              Works
+        <li className="">
+          <HoverCard openDelay={0}>
+            <HoverCardTrigger asChild>
+              <button className="text-lg text-secondary hover:text-accent lg:text-xl">
+                Work
+              </button>
             </HoverCardTrigger>
             <HoverCardContent className="mt-4 rounded border bg-background px-4 pb-4 pt-2">
               <CategoryList />
