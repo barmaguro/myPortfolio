@@ -1,16 +1,16 @@
 import { getAllCategoryList } from "@/libs/microcms";
 import Link from "next/link";
 
+
 export default async function CategoryList() {
   const categories = await getAllCategoryList();
-
   return (
     <>
-      <ul className="mt-2 flex flex-col gap-2 md:gap-4">
-        <li>
+      <ul className="mt-2 flex flex-col gap-2  md:gap-4">
+        <li >  
           <Link href={"/works"} className="flex items-center gap-1 underline">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg"    
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"

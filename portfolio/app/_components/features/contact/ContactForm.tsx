@@ -13,17 +13,6 @@ const initialState = {
 
 export default function ContactForm() {
   const [state, formAction] = useFormState(createContactData, initialState);
-  // console.log(state);
-  // if (state.status === "success") {
-  //   return (
-  //     <p className="">
-  //       お問い合わせありがとうございます。
-  //       <br />
-  //       お返事まで今しばらくお待ちください。
-  //     </p>
-  //   );
-  // }
-
   return (
     <>
       <form action={formAction} className="mt-8">
