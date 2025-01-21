@@ -1,6 +1,5 @@
 import ContactForm from "@/components/features/contact/ContactForm";
 import SectionTitle from "@/components/SectionTitle";
-import Image from "next/image";
 
 export default function index() {
   return (
