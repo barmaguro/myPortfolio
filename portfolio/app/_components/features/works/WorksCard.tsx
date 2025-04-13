@@ -50,7 +50,7 @@ export default async function WorksCard({ category }: Props) {
               </div>
               <p className="mt-5 text-base md:text-lg">{works.summary}</p>
               <Link
-                aria-label={`${works.title}ページに移動する`}
+                aria-label={`${works.title}の詳細ページに移動する`}
                 href={`works/${works.id}`}
                 className="mx-auto mt-8 block w-fit"
               >

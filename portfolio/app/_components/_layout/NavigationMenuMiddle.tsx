@@ -14,10 +14,10 @@ export default function index() {
         <ul className="mx-auto flex w-fit items-baseline gap-14 py-5">
           {navItems.map((item, index) => (
             <>
-              {item.label === "Works" ? (
+              {item.label === "Works" ? (   
                 multipleMenu(item)
               ) : (
-                <li className="" key={index}>
+                <li className="" key={index} autoFocus >
                   <Link
                     href={item.href}
                     area-label={`${item}セクションに移動する`}
@@ -58,7 +58,7 @@ const multipleMenu = (item) => {
         <li className="">
           <HoverCard openDelay={0}>
             <HoverCardTrigger asChild>
-              <button className="text-lg text-secondary hover:text-accent lg:text-xl">
+              <button className="text-lg text-secondary hover:text-accent lg:text-xl" aria-label="詳細ポップアップをひらく。" >
                 Work
               </button>
             </HoverCardTrigger>

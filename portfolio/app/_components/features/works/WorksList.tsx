@@ -62,7 +62,7 @@ export default function WorksList({ works }: Props) {
 
             <p className="mt-5 text-sm md:text-base">{works.summary}</p>
 
-            <Link href={`/works/${works.id}`} aria-label={`${works.title}ページに移動する`} className="mt-10 block">
+            <Link href={`/works/${works.id}`} aria-label={`${works.title}の詳細ページに移動する`} className="mt-10 block">
               <ButtonHover
                 bgColor={"bg-secondary"}
                 textColor={"hover:text-secondary"}

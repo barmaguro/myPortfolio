@@ -22,7 +22,7 @@ const BackButton: React.FC = () => {
       borderColor={"hover:border-secondary"}
       margin="mx-auto"
     >
-      <button onClick={handleBack} className="">
+      <button onClick={handleBack} className="" aria-label="前のページに戻る">
         戻る
       </button>
     </ButtonHover>
