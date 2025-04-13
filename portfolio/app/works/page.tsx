@@ -20,6 +20,7 @@ export default async function Page() {
           <li key={index}>
             <Link
               href={`/works/category/${category.id}`}
+              aria-label={`${category.name}ページに移動する`}
               key={index}
               className="flex items-center gap-1"
             >

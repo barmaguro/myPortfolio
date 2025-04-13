@@ -20,6 +20,7 @@ export default function index() {
                 <li className="" key={index}>
                   <Link
                     href={item.href}
+                    area-label={`${item}セクションに移動する`}
                     className="group flex items-center gap-1"
                   >
                     <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">
@@ -27,7 +28,7 @@ export default function index() {
                     </p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
+                      fill="none"         
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"

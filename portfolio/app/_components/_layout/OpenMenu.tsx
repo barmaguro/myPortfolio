@@ -13,7 +13,7 @@ export default function OpenMenu() {
   return (
     <>
       <Drawer>
-        <DrawerTrigger className="size-12 rounded-full border-transparent bg-primary text-white">
+        <DrawerTrigger className="size-12 rounded-full border-transparent bg-primary text-white" aria-label="ナビゲーションメニューを開く">
           menu
         </DrawerTrigger>
         <DrawerContent>
@@ -22,7 +22,7 @@ export default function OpenMenu() {
               {navItems.map((item, index) => (
                 <>
                   <li className="text-2xl text-secondary" key={index}>
-                    <Link href={item.href} className="flex items-center gap-3">
+                    <Link href={item.href} aria-label={`${item}セクションに移動する`} className="flex items-center gap-3">
                       <p>{item.label}</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +49,7 @@ export default function OpenMenu() {
             <Button
               variant="outline"
               className="size-14 rounded-full bg-secondary text-lg text-white"
+              aria-label="ナビゲーションメニューを閉じる"
             >
               close
             </Button>

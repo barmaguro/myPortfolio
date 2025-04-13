@@ -16,6 +16,7 @@ export default function Article({ data }: Props) {
           <h1 className="mt-5 pl-2 text-3xl font-medium">{data.title}</h1>
           <Link
             href={`/works/category/${data.category.id}`}
+            aria-label={`${data.title}ページに移動する`}
             className="mt-5 block w-fit rounded-full bg-primary px-4 py-1 text-sm text-white"
           >
             {data.category.name}
