@@ -17,7 +17,7 @@ export default function index() {
               {item.label === "Works" ? (   
                 multipleMenu(item)
               ) : (
-                <li className="" key={index} autoFocus >
+                <li className="" key={index} >
                   <Link
                     href={item.href}
                     area-label={`${item}セクションに移動する`}
