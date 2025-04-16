@@ -31,6 +31,7 @@ export default function ContactForm() {
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="fullname"
               name="fullname"
+              autoComplete="name"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
@@ -52,6 +53,7 @@ export default function ContactForm() {
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="email"
               name="email"
+              autoComplete="email"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
@@ -70,6 +72,7 @@ export default function ContactForm() {
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="company"
               name="company"
+              autoComplete="organization"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
