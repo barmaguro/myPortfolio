@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <div className="container mx-auto flex items-center justify-between bg-background px-4 pt-3">
-        <Link href="/">
+        <Link href="/" aria-label="トップページに戻る">
           <LogoHasText />
         </Link>
         <div className="md:hidden">

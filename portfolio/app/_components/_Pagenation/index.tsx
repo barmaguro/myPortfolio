@@ -28,6 +28,7 @@ export default function Pagenation({
             {current !== p ? (
               <Link
                 href={`${basePath}/p/${p}`}
+                aria-label={`${p}ページに移動する`}
                 className="flex size-10 items-center justify-center rounded-full border transition hover:scale-110 hover:border-2 hover:font-bold"
               >
                 {p}

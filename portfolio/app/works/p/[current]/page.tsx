@@ -36,6 +36,7 @@ export default async function Page({ params }: Props) {
           <li key={index}>
             <Link
               href={`/works/category/${category.id}`}
+              aria-label={`${category.name}に移動する`}
               key={index}
               className="flex items-center gap-1"
             >

@@ -101,7 +101,7 @@ export default function ContactForm() {
               name="polisycheck"
             />
             <p className="h-full">
-              <Link href="/privacyPolicy" className="text-accent underline">
+              <Link href="/privacyPolicy" rel="privacy-policy" className="text-accent underline">
                 プライバシーポリシー
               </Link>
               に同意する。

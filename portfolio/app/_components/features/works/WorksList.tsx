@@ -27,6 +27,7 @@ export default function WorksList({ works }: Props) {
             <div className="mt-4 flex items-center justify-between">
               <Date date={works.publishedAt ?? works.createdAt} />
               <Link
+                aria-label={`${works.category}ページに移動する`}
                 href={`/works/category/${works.category.id}`}
                 className={`block w-fit rounded-full ${getCategoryBgColor(works)} px-4 py-1 text-sm text-white`}
               >
@@ -61,7 +62,7 @@ export default function WorksList({ works }: Props) {
 
             <p className="mt-5 text-sm md:text-base">{works.summary}</p>
 
-            <Link href={`/works/${works.id}`} className="mt-10 block">
+            <Link href={`/works/${works.id}`} aria-label={`${works.title}の詳細ページに移動する`} className="mt-10 block">
               <ButtonHover
                 bgColor={"bg-secondary"}
                 textColor={"hover:text-secondary"}
