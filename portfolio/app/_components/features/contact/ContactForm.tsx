@@ -12,7 +12,8 @@ const initialState = {
 };
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(createContactData, initialState);
+  // const [state, formAction] = useFormState(createContactData, initialState);
+  // ↑hubspot用
   return (
     <>
       <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflx_rtWNJHTOQHyYp64kr4REwpo0KTZB_JHAIONeoufKdwvQ/formResponse" className="mt-8">
@@ -102,6 +103,7 @@ export default function ContactForm() {
               className="block size-6"
               id="polisycheck"
               name="polisycheck"
+              required
             />
             <p className="h-full">
               <Link href="/privacyPolicy" rel="privacy-policy" className="text-accent underline">
@@ -112,7 +114,7 @@ export default function ContactForm() {
           </div>
           {/* contact-4 */}
           <div className="mt-20 grid place-items-center">
-            {state.status === "error" && <p className="">{state.message}</p>}
+            {/* {state.status === "error" && <p className="">{state.message}</p>} */}
             <ButtonHover
               bgColor={"bg-primary"}
               textColor={"hover:text-primary"}
@@ -122,7 +124,7 @@ export default function ContactForm() {
                 送信する
               </button>
             </ButtonHover>
-            {state.status === "success" ? (
+            {/* {state.status === "success" ? (
               <div className="mt-10 flex items-center justify-center gap-4">
                 <p className="font-lg text-center">
                   お問い合わせありがとうございます。
@@ -141,7 +143,8 @@ export default function ContactForm() {
               </div>
             ) : (
               ""
-            )}
+            )} */}
+            {/* ↑hubspot用 */}
           </div>
         </div>
       </form>
