@@ -12,11 +12,10 @@ const initialState = {
 };
 
 export default function ContactForm() {
-  // const [state, formAction] = useFormState(createContactData, initialState);
-  // ↑hubspot用
+  const [state, formAction] = useFormState(createContactData, initialState);
   return (
     <>
-      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflx_rtWNJHTOQHyYp64kr4REwpo0KTZB_JHAIONeoufKdwvQ/formResponse" className="mt-8">
+      <form action={formAction} className="mt-8">
         <div className="container [&>div]:mt-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
@@ -31,7 +30,7 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="fullname"
-              name="entry.742008999"
+              name="fullname"
               autoComplete="name"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -53,7 +52,7 @@ export default function ContactForm() {
               type="email"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="email"
-              name="entry.177575367"
+              name="email"
               autoComplete="email"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -72,7 +71,7 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="company"
-              name="entry.1411369875"
+              name="company"
               autoComplete="organization"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -94,7 +93,7 @@ export default function ContactForm() {
               className="border border-primary px-2 py-1"
               rows={10}
               id="message"
-              name="entry.308367407"
+              name="message"
             />
           </div>
           <div className="flex items-center justify-center gap-4">
@@ -103,7 +102,6 @@ export default function ContactForm() {
               className="block size-6"
               id="polisycheck"
               name="polisycheck"
-              required
             />
             <p className="h-full">
               <Link href="/privacyPolicy" rel="privacy-policy" className="text-accent underline">
@@ -114,17 +112,17 @@ export default function ContactForm() {
           </div>
           {/* contact-4 */}
           <div className="mt-20 grid place-items-center">
-            {/* {state.status === "error" && <p className="">{state.message}</p>} */}
+            {state.status === "error" && <p className="">{state.message}</p>}
             <ButtonHover
               bgColor={"bg-primary"}
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
-              <button type="submit" value="送信する" className="w-full">
+              <button type="submit" value="送信する" className="">
                 送信する
               </button>
             </ButtonHover>
-            {/* {state.status === "success" ? (
+            {state.status === "success" ? (
               <div className="mt-10 flex items-center justify-center gap-4">
                 <p className="font-lg text-center">
                   お問い合わせありがとうございます。
@@ -143,8 +141,7 @@ export default function ContactForm() {
               </div>
             ) : (
               ""
-            )} */}
-            {/* ↑hubspot用 */}
+            )}
           </div>
         </div>
       </form>
