@@ -12,23 +12,23 @@ const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.motodesgin.site/"),
+  metadataBase: new URL("https://motodesgin.site/"),
   title: {
     template: "%s | MotoDesignのポートフォリオ",
     default: "MotoDesignのポートフォリオ",
   },
   description:
-    "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
+    "おしゃれなだけじゃない。課題を解くデザイン。webデザイナー、MotoDesignのポートフォリオです。",
   openGraph: {
     title: {
       template: "%s | MotoDesignのポートフォリオ",
       default: "MotoDesignのポートフォリオ",
     },
     description:
-      "想いを届けるwebサイト制作。webデザイナー、MotoDesignのポートフォリオです。",
+      "おしゃれなだけじゃない。課題を解くデザイン。webデザイナー、MotoDesignのポートフォリオです。",
     images: ["/dynamic/ogp.png"],
   },
-  alternates: { canonical: "https://www.motodesgin.site/" },
+  alternates: { canonical: "https://motodesgin.site/" },
 };
 // TODO: imagesの設定を追加する
 
