@@ -30,7 +30,6 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "https://motodesgin.site/" },
 };
-// TODO: imagesの設定を追加する
 
 export default function RootLayout({
   children,
