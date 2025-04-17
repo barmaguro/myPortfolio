@@ -5,7 +5,7 @@ import {
 } from "./_components/_libs/microcms";
 
 const buildUrl = (path?: string) =>
-  `https://www.motodesgin.site/${path ?? ""}`;
+  `https://motodesgin.site/${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const worksContents = await getAllWorksList();
