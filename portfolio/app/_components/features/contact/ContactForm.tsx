@@ -15,7 +15,7 @@ export default function ContactForm() {
   const [state, formAction] = useFormState(createContactData, initialState);
   return (
     <>
-      <form action={formAction} className="mt-8">
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflx_rtWNJHTOQHyYp64kr4REwpo0KTZB_JHAIONeoufKdwvQ/formResponse" className="mt-8">
         <div className="container [&>div]:mt-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
@@ -30,7 +30,7 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="fullname"
-              name="fullname"
+              name="entry.742008999"
               autoComplete="name"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -52,7 +52,7 @@ export default function ContactForm() {
               type="email"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="email"
-              name="email"
+              name="entry.177575367"
               autoComplete="email"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -71,7 +71,7 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="company"
-              name="company"
+              name="entry.1411369875"
               autoComplete="organization"
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
@@ -93,7 +93,7 @@ export default function ContactForm() {
               className="border border-primary px-2 py-1"
               rows={10}
               id="message"
-              name="message"
+              name="entry.308367407"
             />
           </div>
           <div className="flex items-center justify-center gap-4">
@@ -118,7 +118,7 @@ export default function ContactForm() {
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
-              <button type="submit" value="送信する" className="">
+              <button type="submit" value="送信する" className="w-full">
                 送信する
               </button>
             </ButtonHover>
