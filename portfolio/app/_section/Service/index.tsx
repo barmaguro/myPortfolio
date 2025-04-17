@@ -5,7 +5,7 @@ import Image from "next/image";
 const serviceContents = [
   {
     title: "サイト制作",
-    titleSub: "Cording",
+    titleSub: "Coding",
     text: "要件定義から、サーバーアップまで全ての工程を担当します。目的に合わせたサイト設計で、ユーザーが使いやすく、魅力が伝わるウェブサイトを制作します。",
     skills: ["WordPress", "ヘッドレスCMS", "Next.js", "Nuxt.js", "GSAP", "html/css", "JavaScript"],
     url: "/images/img_service01.png",
