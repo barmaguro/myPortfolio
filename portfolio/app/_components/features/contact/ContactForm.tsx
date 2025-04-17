@@ -2,8 +2,8 @@
 
 import ButtonHover from "@/components/ButtonHover";
 import { createContactData } from "app/_actions/contact";
-import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 
 const initialState = {
@@ -12,7 +12,13 @@ const initialState = {
 };
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(createContactData, initialState);
+  const [formState, formAction] = useFormState(createContactData, initialState);
+  const [isSent, setIsSent] = useState(false);
+
+  // ③ 送信成功を検知 → モーダルを開く
+  useEffect(() => {
+    if (formState.status === "success") setIsSent(true);
+  }, [formState.status]);
   return (
     <>
       <form action={formAction} className="mt-8">
@@ -104,7 +110,11 @@ export default function ContactForm() {
               name="polisycheck"
             />
             <p className="h-full">
-              <Link href="/privacyPolicy" rel="privacy-policy" className="text-accent underline">
+              <Link
+                href="/privacyPolicy"
+                rel="privacy-policy"
+                className="text-accent underline"
+              >
                 プライバシーポリシー
               </Link>
               に同意する。
@@ -112,35 +122,44 @@ export default function ContactForm() {
           </div>
           {/* contact-4 */}
           <div className="mt-20 grid place-items-center">
-            {state.status === "error" && <p className="">{state.message}</p>}
             <ButtonHover
               bgColor={"bg-primary"}
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
-              <button type="submit" value="送信する" className="">
+              <button type="submit" value="送信する" className="w-full h-full">
                 送信する
               </button>
             </ButtonHover>
-            {state.status === "success" ? (
-              <div className="mt-10 flex items-center justify-center gap-4">
-                <p className="font-lg text-center">
-                  お問い合わせありがとうございます。
-                  <br />
-                  ご返信まで、少々お待ちください。
-                </p>
-                <div className="w-8">
-                  <Image
-                    src="/images/deco_send-mail.png"
-                    alt=""
-                    width={532}
-                    height={1100}
-                    className="h-auto w-full"
-                  />
+            {formState.status === "error" && (
+                <p className="mt-2 text-red-500">{formState.message}</p>
+              )}
+            {isSent && (
+              <div
+                aria-modal
+                role="dialog"
+                className={`fixed inset-0 z-50 flex items-center justify-center bg-black/40 transition-opacity duration-300 ${isSent ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
+              >
+                <div
+                  className={`w-full max-w-md rounded-xl bg-white p-8 text-center shadow-lg transition-all duration-300 ${isSent ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+                >
+                  <h2 className="text-2xl font-semibold">
+                    ありがとうございました！
+                  </h2>
+                  <p className="mt-4">
+                    お問い合わせを受け付けました。
+                    <br />
+                    内容を確認後、折り返しご連絡いたします。
+                  </p>
+
+                  <button
+                    onClick={() => setIsSent(false)}
+                    className="mt-6 rounded-sm bg-secondary px-2 py-1 text-white transition"
+                  >
+                    閉じる
+                  </button>
                 </div>
               </div>
-            ) : (
-              ""
             )}
           </div>
         </div>
