@@ -108,12 +108,16 @@ export default function ContactForm() {
               className="block size-6"
               id="polisycheck"
               name="polisycheck"
+              role="checkbox"
+              aria-checked="false"
+              aria-label="プライバシーポリシーに同意してチェックする"
             />
             <p className="h-full">
               <Link
                 href="/privacyPolicy"
                 rel="privacy-policy"
                 className="text-accent underline"
+                aria-label="プライバシーポリシーページに移動する"
               >
                 プライバシーポリシー
               </Link>
@@ -127,7 +131,7 @@ export default function ContactForm() {
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
-              <button type="submit" value="送信する" className="w-full h-full">
+              <button type="submit" value="送信する" className="w-full h-full" aria-label="お問い合わせを送信する">
                 送信する
               </button>
             </ButtonHover>
