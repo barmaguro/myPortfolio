@@ -14,7 +14,7 @@ export default function Page() {
       </section>
       <section
         id="service"
-        className="mx-auto mt-16 max-w-lg px-4 md:mt-32 lg:max-w-5xl"
+        className="mx-auto mt-16 max-w-lg px-4 md:mt-32 lg:max-w-5xl content-visibility"
       >
         <Service />
       </section>
@@ -24,10 +24,10 @@ export default function Page() {
       >
         <Works />
       </section>
-      <section id="about" className="mx-auto mt-16 max-w-lg px-4 md:mt-32">
+      <section id="about" className="mx-auto mt-16 max-w-lg px-4 md:mt-32 content-visibility">
         <About />
       </section>
-      <section id="contact" className="mx-auto mt-16 max-w-2xl px-4 md:mt-32">
+      <section id="contact" className="mx-auto mt-16 max-w-2xl px-4 md:mt-32 content-visibility">
         <Contact />
       </section>
     </div>
