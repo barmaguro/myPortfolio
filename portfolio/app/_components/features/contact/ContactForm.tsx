@@ -148,7 +148,7 @@ export default function ContactForm() {
                   className={`w-full max-w-md rounded-xl bg-white p-8 text-center shadow-lg transition-all duration-300 ${isSent ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
                 >
                   <h2 className="text-2xl font-semibold">
-                    ありがとうございました！
+                    ありがとうございました！!
                   </h2>
                   <p className="mt-4">
                     お問い合わせを受け付けました。
