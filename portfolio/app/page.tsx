@@ -9,7 +9,6 @@ export default function Page() {
   return (
     <div className="mx-auto">
       <KeyVisual />
-      <main>
         <section className="mx-auto max-w-lg px-4 lg:max-w-xl">
           <Concept />
         </section>
@@ -37,7 +36,6 @@ export default function Page() {
         >
           <Contact />
         </section>
-      </main>
     </div>
   );
 }
