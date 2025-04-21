@@ -11,7 +11,7 @@ export default function index() {
   return (
     <>
       <nav className="">
-        <ul className="mx-auto flex w-fit items-baseline gap-14 py-5">
+        <ul className="mx-auto flex w-fit items-center gap-14 py-5">
           {navItems.map((item, index) => (
             <>
               {item.label === "Works" ? (   
