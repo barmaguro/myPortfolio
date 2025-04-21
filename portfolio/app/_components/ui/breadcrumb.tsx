@@ -65,7 +65,7 @@ const BreadcrumbPage = React.forwardRef<
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn("font-normal text-secondary relative pl-4 before:w-2 before:h-2 before:bg-primary before:rounded-full before:absolute before:left-0 before:top-1/2 before:-translate-y-1/3 text-trim", className)}
+    className={cn("font-normal text-foreground relative pl-3 before:w-2 before:h-2 before:bg-primary before:rounded-full before:absolute before:left-0 before:top-1/2 before:-translate-y-1/3 ", className)}
     {...props}
   />
 ));
