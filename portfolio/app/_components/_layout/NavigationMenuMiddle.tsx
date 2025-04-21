@@ -23,7 +23,7 @@ export default function index() {
                     area-label={`${item}セクションに移動する`}
                     className="group flex items-center gap-1"
                   >
-                    <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">
+                    <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl ">
                       {item.label}
                     </p>
                     <svg
@@ -32,7 +32,7 @@ export default function index() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-5 transition group-hover:animate-bounce group-hover:text-accent lg:size-7"
+                      className="size-5 transition group-hover:animate-bounce group-hover:text-accent lg:size-7 lg:-translate-y-2"
                     >
                       <path
                         strokeLinecap="round"

@@ -102,4 +102,7 @@ body {
   content-visibility:auto;
 }
 
-
+.text-trim{
+  text-box-trim: trim-both;
+  text-box-edge: text;
+}
