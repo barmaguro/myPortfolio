@@ -1,7 +1,4 @@
 "use client";
-/* eslint-disable no-unused-vars */
-// filepath: /Users/motok/Desktop/myPortfolio/myPortfolio/portfolio/components/ui/carousel.tsx
-
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
@@ -255,8 +252,6 @@ const CarouselNext = React.forwardRef<
   );
 });
 CarouselNext.displayName = "CarouselNext";
-
-/* eslint-enable no-unused-vars */
 
 export {
   Carousel,

@@ -29,17 +29,13 @@ export function generateBreadcrumbs(
   ];
 
   return breadcrumbPaths
-    .filter((path) => path !== PageRoute.CATEGORY) // CATEGORYを除外
+    .filter((path) => path !== PageRoute.CATEGORY) 
     .map((path, index) => {
       const currentPath = breadcrumbPaths[index];
-
-      // 動的ルートと静的ルートの区別を行う
       let key = currentPath as PageRoute;
       if (key.includes(`${PageRoute.WORKS}/`) && !pageNameMap[key]) {
         key = PageRoute.WORKS_DETAIL;
       }
-
-      // CATEGORY_SITEなどのページの場合にWORKS_DETAILを表示しない
       if (
         key === PageRoute.WORKS_DETAIL &&
         (path.includes(PageRoute.CATEGORY_SITE) ||
@@ -48,8 +44,6 @@ export function generateBreadcrumbs(
       ) {
         key = path as PageRoute;
       }
-
-      // 特定のパスに対してラベルを上書き
       let label = pageNameMap[key] || path;
       if (key === PageRoute.WORKS_DETAIL && categoryName) {
         label = categoryName;
@@ -67,7 +61,7 @@ export function generateBreadcrumbs(
     .filter(
       (breadcrumb, index, self) =>
         index === self.findIndex((b) => b.label === breadcrumb.label)
-    ); // 重複するラベルを除外
+    ); 
 }
 
 dayjs.extend(utc);
@@ -92,6 +86,6 @@ export const getCategoryBgColor = (item) => {
     case "works-support":
       return "bg-[#b58fff]";
     default:
-      return ""; // デフォルトのクラス名を返す
+      return ""; 
   }
 };

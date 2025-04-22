@@ -6,7 +6,6 @@ function validateEmail(email: string) {
 }
 
 export async function createContactData(_prevState: any, formData: FormData) {
-  // formのname属性ごとにformData.get()で値を取り出すことができる
   const rawFormData = {
     fullname: formData.get("fullname") as string,
     company: formData.get("company") as string,
