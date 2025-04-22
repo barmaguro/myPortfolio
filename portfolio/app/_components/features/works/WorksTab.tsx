@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function WorksTab({ category }: Props) {
-  const [selectedCategory, setSelectedCategory] = useState(category[0].id); // 選択中のカテゴリ
+  const [selectedCategory, setSelectedCategory] = useState(category[0].id);
 
   return (
     <>

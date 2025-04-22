@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-// filepath: /Users/motok/Desktop/myPortfolio/myPortfolio/portfolio/@/libs/routes.ts
 export enum PageRoute {
   HOME = "/",
   WORKS = "/works",
@@ -10,8 +8,6 @@ export enum PageRoute {
   CATEGORY_DETAIL = "/works/category/[id]",
   CATEGORY = "/works/category",
 }
-
-/* eslint-enable no-unused-vars */
 
 /**
  * ページ名

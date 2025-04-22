@@ -14,8 +14,6 @@ const initialState = {
 export default function ContactForm() {
   const [formState, formAction] = useFormState(createContactData, initialState);
   const [isSent, setIsSent] = useState(false);
-
-  // ③ 送信成功を検知 → モーダルを開く
   useEffect(() => {
     if (formState.status === "success") setIsSent(true);
   }, [formState.status]);
