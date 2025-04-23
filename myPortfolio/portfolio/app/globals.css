@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f4f6fc;
+    --foreground: #242424;
+    --card: #f4f6fc;
+    --card-foreground: #242424;
+    --popover: #f4f6fc;
+    --popover-foreground: #242424;
+    --primary: #0c7575;
+    --primary-foreground: #ffe9ed;
+    --secondary: #050a30;
+    --secondary-foreground: #171717;
+    --muted: #f2f3f5;
+    --muted-foreground: #898989;
+    --accent: #233dff;
+    --accent-light: #acb6ff;
+    --accent-foreground: #171717;
+    --warning:#FF484B;
+    --warning-foreground:#f3b9ba;
+    --destructive: #ff484b;
+    --destructive-foreground: #fafafa;
+    --border: #545454;
+    --input: #545454;
+    --ring: #3e9933;
+    --radius: 0.5rem;
+    --chart-1: #ff672e;
+    --chart-2: #3eaf9c;
+    --chart-3: #58859a;
+    --chart-4: #f8ca30;
+    --chart-5: #ffac2e;
+    --black: #0000;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .clip-bg {
+    @apply relative before:w-3 before:h-3 before:rounded-full before:bg-primary before:absolute before:top-1/2 before:left-0 before:-translate-x-3 before:-translate-y-1/2;
+  }
+  .position-center{
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+  }
+  .policy-head{
+    @apply mt-5 text-lg font-bold relative pl-3 before:absolute before:w-1 before:h-5/6 before:bg-primary before:left-0 before:top-1/2 before:-translate-y-1/2 before:rounded
+  }
+  .policy-desc{
+    @apply mt-4
+  }
+}
+
+:root{
+  --scaleX:0;
+}
+
+.global_clip-top {
+  clip-path: polygon(100% 30%, 0% 100%, 100% 100%);
+}
+.global_clip-bottom {
+  clip-path: polygon(100% 0, 0 0, 0 70%);
+}
+
+.global_overflow-view{
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+}
+
+.global_clip-path__right-arrow::before{
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  background-color: var(--primary);
+  content:"";
+  position: absolute;
+  top: 25%;
+  left: -16px;
+}
+
+.global_clip-pentagon{
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+} 
+
+.content-visibility{
+  content-visibility:auto;
+}
+
+.text-trim{
+  text-box-trim: trim-both;
+  text-box-edge: text;
+}
