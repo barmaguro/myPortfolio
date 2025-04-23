@@ -14,9 +14,9 @@ body {
 
 @layer base {
   :root {
-    --background: #f4f6fc;
+    --background: #fbfcff;
     --foreground: #242424;
-    --card: #f4f6fc;
+    --card: #fbfcff;
     --card-foreground: #242424;
     --popover: #f4f6fc;
     --popover-foreground: #242424;
@@ -26,7 +26,7 @@ body {
     --secondary-foreground: #171717;
     --muted: #f2f3f5;
     --muted-foreground: #898989;
-    --accent: #233dff;
+    --accent: #2355d5;
     --accent-light: #acb6ff;
     --accent-foreground: #171717;
     --warning:#FF484B;
