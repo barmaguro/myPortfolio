@@ -10,6 +10,7 @@ export default function LogoHasText() {
             alt="motodesginのロゴ"
             width={500}
             height={500}
+            loading="eager"
           />
         </div>
         <p className="text-2xs uppercase tracking-widest text-secondary md:text-xs lg:text-sm">
