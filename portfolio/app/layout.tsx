@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 import React from "react";
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import "./globals.css";
@@ -43,7 +43,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_GA_ID} />
+      {/* <GoogleAnalytics gaId={process.env.NEXT_GA_ID} /> */}
     </html>
   );
 }
