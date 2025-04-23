@@ -15,7 +15,7 @@ type BadgeLineType = {
             <ul className="flex flex-wrap gap-x-2 gap-y-3">
               {Object.keys(list).map((key, i) => (
                 list[key].map((item, j) => (
-                  <li key={`${i}-${j}`} className="w-fit rounded border-accent px-4 py-1 text-sm text-accent md:text-base">
+                  <li key={`${i}-${j}`} className="w-fit rounded border border-accent px-4 py-1 text-sm text-accent md:text-base">
                     {item}
                   </li>
                 ))
