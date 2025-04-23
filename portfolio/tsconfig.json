@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,16 +22,33 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["app/*"],
-      "@/components/*": ["app/_components/*"],
-      "@/libs/*": ["app/_components/_libs/*"],
-      "@/layout/*": ["app/_components/_layout/*"],
-      "@/features/*": ["app/_components/features/*"],
-      "@/animation/*": ["app/_components/_animation/*"],
-      "@/section/*": ["app/_section/*"],
-      "@/constants/*": ["app/_constants/*"]
+      "@/*": [
+        "app/*"
+      ],
+      "@/components/*": [
+        "app/_components/*"
+      ],
+      "@/libs/*": [
+        "app/_components/_libs/*"
+      ],
+      "@/layout/*": [
+        "app/_components/_layout/*"
+      ],
+      "@/features/*": [
+        "app/_components/features/*"
+      ],
+      "@/animation/*": [
+        "app/_components/_animation/*"
+      ],
+      "@/section/*": [
+        "app/_section/*"
+      ],
+      "@/constants/*": [
+        "app/_constants/*"
+      ]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -36,5 +57,7 @@
     ".next/types/**/*.ts",
     "libs/client.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
