@@ -16,6 +16,7 @@ function KeyVisual() {
               alt="ロゴ"
               width={500}
               height={500}
+              priority={true}
             />
           <p className="mx-auto absolute bottom-0 left-4 translate-y-12 whitespace-nowrap font-medium leading-loose tracking-wide text-white  md:text-xl/10  lg:translate-y-12 lg:text-2xl/10">
             おしゃれなだけじゃない、
