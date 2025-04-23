@@ -9,12 +9,13 @@ import { WORKS_LIST_LIMIT } from "@/_constants";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default async function page({ params }: Props) {
+export default async function page(props: Props) {
+  const params = await props.params;
   const category = await getCategoryDetail(params.id).catch(notFound);
   const { contents: works, totalCount } = await getWorksList({
     limit: WORKS_LIST_LIMIT,
