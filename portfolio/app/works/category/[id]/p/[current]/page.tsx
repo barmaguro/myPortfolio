@@ -6,13 +6,14 @@ import { WORKS_LIST_LIMIT } from "app/_constants";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
     current: string;
-  };
+  }>;
 };
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const current = parseInt(params.current as string, 10);
 
   const category = await getCategoryDetail(params.id).catch(notFound);
