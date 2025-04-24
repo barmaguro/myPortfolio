@@ -18,10 +18,8 @@ function KeyVisual() {
               height={500}
               loading="eager"
             />
-          <p className="mx-auto absolute bottom-0 left-4 translate-y-12 whitespace-nowrap font-medium leading-loose tracking-wide text-white  md:text-xl/10  lg:translate-y-12 lg:text-2xl/10">
-            おしゃれなだけじゃない、
-            <br />
-            課題を解くデザイン。
+          <p className="mx-auto absolute bottom-0 left-4 translate-y-12 whitespace-nowrap font-medium leading-loose tracking-wide text-white text-xl/10  lg:translate-y-12 lg:text-3xl/10 drop-shadow-md">
+            課題を解決するwebデザイン
           </p>
           </div>
         </div>
