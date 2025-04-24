@@ -11,12 +11,12 @@ type Props = {
 
 export default function ButtonHover({ children,bgColor, textColor ,borderColor,margin} :Props) {
   return (
-    <div className={`relative h-12 w-40 ${margin}`}>
+    <div className={`relative h-12 w-60 d ${margin}`}>
       <span
-        className={`absolute size-full ${bgColor} top-0 rounded`}
+        className={`absolute size-full ${bgColor} top-0 rounded-full`}
       ></span>
       <p
-        className={`absolute size-full ${bgColor} flex items-center justify-center rounded text-white transition hover:-translate-x-1 hover:-translate-y-1 hover:bg-white ${textColor} ${borderColor} hover:border-2 active:-translate-x-0 active:-translate-y-0`}
+        className={`absolute size-full ${bgColor} flex items-center justify-center rounded-full text-white transition hover:-translate-x-1 hover:-translate-y-1 hover:bg-white ${textColor} ${borderColor} hover:border-2 active:-translate-x-0 active:-translate-y-0`}
       >
         {children}
       </p>

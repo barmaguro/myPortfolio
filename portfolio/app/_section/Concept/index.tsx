@@ -5,30 +5,22 @@ export default function index() {
   return (
     <div>
       <SectionTitle title="concept" />
-      <div className="mt-10 text-lg/9 lg:text-xl/9">
-        <p className="mt-8">
-          デザインがおしゃれで目を引くのはもちろん大切なことです。
+      <div className="mt-10 text-center text-lg/9 lg:text-xl/9">
+        <p>デザインを通して</p>
+        <Marker addClass="mt-5 lg:mt-7 inline-block">
+          「何を解決したいのか」
+        </Marker>
+        <p className="mt-8  md:inline-block">をしっかり考えること。</p>
+        <p className="mt-8 ">
+          魅力を伝えるため、 <br />
+          ユーザーに行動してもらうため、<br />
+          ビジネスの課題をクリアにするため。
         </p>
-        <p className="mt-8">
-          でも、それだけで終わってしまうと本当に求めている成果には届きません。
-        </p>
-        <p className="mt-8">
-          私が大切にしているのは、デザインを通して
-          <br />
-          <Marker addClass="mt-5 lg:mt-7">「何を解決したいのか」</Marker>
-          <br />
-          をしっかり考えること。
-        </p>
-        <p className="mt-8">
-          魅力を伝えるため、
-          <br /> ユーザーに行動してもらうため、
-          <br /> ビジネスの課題をクリアにするため。
-        </p>
-        <p className="mt-8">
-          目的に合わせて、一つひとつ丁寧にデザインを作り上げていきます。
-        </p>
-        <p className="mt-8">
-          ただの「おしゃれ」で終わらない、課題を解決するデザインを一緒に作りませんか？
+        <Marker addClass="mt-5 lg:mt-7 inline-block">
+        「課題を解決する」
+        </Marker>
+        <p className="mt-8  md:inline-block">
+          webサイトを制作します。
         </p>
       </div>
     </div>
