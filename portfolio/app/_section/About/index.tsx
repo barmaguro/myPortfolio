@@ -26,8 +26,8 @@ export default function index() {
       </div>
       <div className="mx-auto mt-20 tracking-widest">
         <span className="mx-auto block w-fit">
-          <p className="text-lg font-medium md:text-xl">Eda Motoki</p>
-          <p className="text-xl font-medium md:text-2xl">江田 企毅</p>
+          <p className="text-xl font-medium md:text-xl">Eda Motoki</p>
+          <p className="text-2xl font-medium md:text-2xl">江田 企毅</p>
         </span>
 
         <p className="mx-auto mt-10 px-4 leading-loose tracking-widest md:text-lg lg:text-xl/8">
