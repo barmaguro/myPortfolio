@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function Date({ date }: Props) {
-  return <span className=" text-sm text-gray-400">{formatDate(date)}</span>;
+  return <span className=" text-sm text-zinc-500">{formatDate(date)}</span>;
 }
