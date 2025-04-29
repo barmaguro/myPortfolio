@@ -18,9 +18,9 @@ function KeyVisual() {
               height={500}
               loading="eager"
             />
-          <p className="mx-auto absolute bottom-0 left-4 translate-y-12 whitespace-nowrap font-medium leading-loose tracking-wide text-white text-xl/10  lg:translate-y-12 lg:text-3xl/10 drop-shadow-md">
+          <h1 className="mx-auto absolute bottom-0 left-4 translate-y-12 whitespace-nowrap font-medium leading-loose tracking-wide text-white text-xl/10  lg:translate-y-12 lg:text-3xl/10 drop-shadow-md">
             課題を解決するwebデザイン
-          </p>
+          </h1>
           </div>
         </div>
       </div>

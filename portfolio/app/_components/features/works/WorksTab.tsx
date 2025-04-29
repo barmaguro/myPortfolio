@@ -28,7 +28,7 @@ export default function WorksTab({ category }: Props) {
             className={
               selectedCategory === cat.id
                 ? "global_clip-path__right-arrow relative scale-110 whitespace-nowrap font-medium transition-transform before:h-4 before:w-3 before:animate-rotate-hor-center"
-                : "whitespace-nowrap opacity-50 transition hover:text-accentLight hover:opacity-100"
+                : "whitespace-nowrap text-zinc-500 transition hover:text-accentLight hover:opacity-100"
             }
           >
             {cat.name}
