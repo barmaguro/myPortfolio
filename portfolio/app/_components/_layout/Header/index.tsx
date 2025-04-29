@@ -1,10 +1,12 @@
+import { getAllCategoryList } from "@/_components/_libs/microcms";
 import BreadCrumb from "@/_components/BreadCrumbWrapper";
 import LogoHasText from "@/layout/LogoHasText";
 import NavigationMenuMiddle from "@/layout/NavigationMenuMiddle";
 import OpenMenu from "@/layout/OpenMenu";
 import Link from "next/link";
 
-export default function Header() {
+export default async function Header() {
+  const categories = await getAllCategoryList();
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <div className="container mx-auto flex items-center justify-between bg-background px-4 pt-3">
@@ -12,10 +14,10 @@ export default function Header() {
           <LogoHasText />
         </Link>
         <div className="md:hidden">
-          <OpenMenu />
+          <OpenMenu categories={categories} />
         </div>
         <div className="hidden md:block">
-          <NavigationMenuMiddle />
+          <NavigationMenuMiddle categories={categories} />
         </div>
       </div>
       <BreadCrumb />

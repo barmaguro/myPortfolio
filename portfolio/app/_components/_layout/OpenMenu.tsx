@@ -5,13 +5,17 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Category } from "@/libs/microcms"; // ← 型をインポート
 import { navItems } from "@/libs/navigation";
 import Link from "next/link";
-import CategoryList from "@/components/CategoryList";
+import CategoryList from "../CategoryList";
 
-export default function OpenMenu() {
+type OpenMenuProps = {
+  categories: Category[];
+};
+
+export default function OpenMenu({ categories }: OpenMenuProps) {
   return (
-    <>
       <Drawer>
         <DrawerTrigger className="size-12 rounded-full border-transparent bg-primary text-white" aria-label="ナビゲーションメニューを開く">
           menu
@@ -20,7 +24,6 @@ export default function OpenMenu() {
           <nav className="">
             <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
               {navItems.map((item, index) => (
-                <>
                   <li className="text-2xl text-secondary" key={index}>
                     <Link href={item.href} aria-label={`${item}セクションに移動する`} className="flex items-center gap-3">
                       <p>{item.label}</p>
@@ -39,9 +42,8 @@ export default function OpenMenu() {
                         />
                       </svg>
                     </Link>
-                    {item.label === "Works" && <CategoryList />}
+                    {item.label === "Works" && <CategoryList categories={categories} />}
                   </li>
-                </>
               ))}
             </ul>
           </nav>
@@ -56,6 +58,5 @@ export default function OpenMenu() {
           </DrawerClose>
         </DrawerContent>
       </Drawer>
-    </>
   );
 }
