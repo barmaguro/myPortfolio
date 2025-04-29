@@ -6,8 +6,13 @@ import {
   HoverCardTrigger,
 } from "@radix-ui/react-hover-card";
 import Link from "next/link";
+import { Category } from "../_libs/microcms";
 
-export default function index() {
+type NavigationMenuMiddleProps = {
+  categories: Category[];
+};
+
+export default function index({ categories }: NavigationMenuMiddleProps) {
   return (
     <>
       <nav className="">
@@ -15,7 +20,7 @@ export default function index() {
           {navItems.map((item, index) => (
             <>
               {item.label === "Works" ? (
-                multipleMenu(item)
+                multipleMenu(item,categories)
               ) : (
                 <li className="" key={index}>
                   <Link
@@ -26,14 +31,14 @@ export default function index() {
                     <p className="text-lg text-secondary transition group-hover:text-accent lg:text-xl">
                       {item.label}
                     </p>
-                    <span className="grid place-items-center size-6 border-1 rounded-full border-secondary group-hover:border-accent group-hover:bg-accent">
+                    <span className="grid size-6 place-items-center rounded-full border-1 border-secondary group-hover:border-accent group-hover:bg-accent">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="size-5 transition group-hover:translate-y-1 group-hover:text-white scale-x-125"
+                        className="size-5 scale-x-125 transition group-hover:translate-y-1 group-hover:text-white"
                       >
                         <path
                           strokeLinecap="round"
@@ -53,7 +58,7 @@ export default function index() {
   );
 }
 
-const multipleMenu = (item) => {
+const multipleMenu = (item: { label: string }, categories: Category[]) => {
   if (item.label === "Works") {
     return (
       <>
@@ -68,7 +73,7 @@ const multipleMenu = (item) => {
               </button>
             </HoverCardTrigger>
             <HoverCardContent className="mt-4 rounded border bg-background px-4 pb-4 pt-2">
-              <CategoryList />
+              <CategoryList categories={categories}/>
             </HoverCardContent>
           </HoverCard>
         </li>
