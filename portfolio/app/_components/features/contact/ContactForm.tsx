@@ -131,13 +131,18 @@ export default function ContactForm() {
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
-              <button type="submit" value="送信する" className="w-full h-full" aria-label="お問い合わせを送信する">
+              <button
+                type="submit"
+                value="送信する"
+                className="h-full w-full"
+                aria-label="お問い合わせを送信する"
+              >
                 送信する
               </button>
             </ButtonHover>
             {formState.status === "error" && (
-                <p className="mt-2 text-red-500">{formState.message}</p>
-              )}
+              <p className="mt-2 text-red-500">{formState.message}</p>
+            )}
             {isSent && (
               <div
                 aria-modal
@@ -155,7 +160,14 @@ export default function ContactForm() {
                     <br />
                     内容を確認後、折り返しご連絡いたします。
                   </p>
-
+                  <button
+                    className="g-recaptcha"
+                    data-sitekey="reCAPTCHA_site_key"
+                    data-callback="onSubmit"
+                    data-action="submit"
+                  >
+                    Submit
+                  </button>
                   <button
                     onClick={() => setIsSent(false)}
                     className="mt-6 rounded-sm bg-secondary px-2 py-1 text-white transition"

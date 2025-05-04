@@ -1,4 +1,5 @@
 import ContactForm from "@/components/features/contact/ContactForm";
+import { ReCaptchaProvider } from "@/recaptcha-provider";
 
 export default function Page() {
   return (
@@ -8,7 +9,9 @@ export default function Page() {
         <br />
         内容確認後、担当者より通常3営業日以内にご連絡いたします。
       </p>
-      <ContactForm />
+      <ReCaptchaProvider>
+        <ContactForm />
+      </ReCaptchaProvider>
     </div>
   );
 }
