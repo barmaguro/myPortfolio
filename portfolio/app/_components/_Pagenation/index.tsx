@@ -21,7 +21,7 @@ export default function Pagenation({
   console.log(pages);
 
   return (
-    <nav>
+    <nav aria-label="ページネーション">
       <ul className="container mx-auto mt-10 flex items-center justify-center gap-6">
         {pages.map((p) => (
           <li key={p} className="text-xl">
