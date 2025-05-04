@@ -133,7 +133,7 @@ export default function ContactForm() {
             >
               <button
                 type="submit"
-                value="送信する"
+                value=""
                 className="h-full w-full"
                 aria-label="お問い合わせを送信する"
               >
@@ -160,14 +160,6 @@ export default function ContactForm() {
                     <br />
                     内容を確認後、折り返しご連絡いたします。
                   </p>
-                  <button
-                    className="g-recaptcha"
-                    data-sitekey="reCAPTCHA_site_key"
-                    data-callback="onSubmit"
-                    data-action="submit"
-                  >
-                    Submit
-                  </button>
                   <button
                     onClick={() => setIsSent(false)}
                     className="mt-6 rounded-sm bg-secondary px-2 py-1 text-white transition"
