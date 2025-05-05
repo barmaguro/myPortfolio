@@ -32,7 +32,7 @@ export default function Page() {
       </section>
       <section
         id="contact"
-        className="content-visibility mx-auto mt-16 max-w-2xl scroll-mt-40 px-4 md:py-24"
+        className="mx-auto mt-16 max-w-2xl scroll-mt-40 px-4 md:py-24"
       >
         <Contact />
       </section>
