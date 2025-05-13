@@ -101,7 +101,7 @@ const ServiceSection = () => {
         </h3>
         {featureContents.map((feature, index) => (
           <div
-            className="mx-auto mt-10 rounded-3xl bg-slate-100 p-8 lg:flex lg:items-center lg:gap-10 shadow-md"
+            className="mx-auto mt-10 rounded-3xl bg-slate-100 p-8 shadow-md lg:flex lg:items-center lg:gap-10"
             key={`feature-${index}`}
           >
             <div className="mx-auto max-w-96 shrink-0">

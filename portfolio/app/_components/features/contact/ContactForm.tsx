@@ -21,7 +21,7 @@ export default function ContactForm() {
   }, [formState.status]);
   return (
     <>
-      <form action={formAction} className="mt-8">
+      <form action={process.env.NEXT_PUBLIC_NEWT_FORM_ENDPOINT} method="POST" className="mt-8">
         <div className="container [&>div]:mt-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
@@ -36,8 +36,10 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="fullname"
+              inputMode="text"
               name="fullname"
               autoComplete="name"
+              required
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
@@ -58,8 +60,10 @@ export default function ContactForm() {
               type="email"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="email"
+              inputMode="email"
               name="email"
               autoComplete="email"
+              required
             />
             <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
               <span className="block">ex.</span>
@@ -77,6 +81,7 @@ export default function ContactForm() {
               type="text"
               className="h-8 border border-primary px-2 py-1 md:h-10"
               id="company"
+              inputMode="text"
               name="company"
               autoComplete="organization"
             />
@@ -99,7 +104,9 @@ export default function ContactForm() {
               className="border border-primary px-2 py-1"
               rows={10}
               id="message"
+              inputMode="text"
               name="message"
+              required
             />
           </div>
           <div className="flex items-center justify-center gap-4">
@@ -134,15 +141,12 @@ export default function ContactForm() {
               <button
                 type="submit"
                 value=""
-                className="h-full w-full"
+                className="size-full"
                 aria-label="お問い合わせを送信する"
               >
                 送信する
               </button>
             </ButtonHover>
-            {formState.status === "error" && (
-              <p className="mt-2 text-red-500">{formState.message}</p>
-            )}
             {isSent && (
               <div
                 aria-modal

@@ -11,7 +11,7 @@ type Props = {
 
 export default function ButtonHover({ children,bgColor, textColor ,borderColor,margin} :Props) {
   return (
-    <div className={`relative h-12 w-60 d ${margin}`}>
+    <div className={`d relative h-12 w-60 ${margin}`}>
       <span
         className={`absolute size-full ${bgColor} top-0 rounded-full`}
       ></span>
