@@ -38,7 +38,7 @@ export default async function Works() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`size-6 translate-y-px ml-2`}
+            className={`ml-2 size-6 translate-y-px`}
           >
             <path
               strokeLinecap="round"
