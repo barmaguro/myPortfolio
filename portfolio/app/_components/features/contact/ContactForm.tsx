@@ -6,10 +6,10 @@ import Link from "next/link";
 // import { useEffect, useState } from "react";
 // import { useFormState } from "react-dom";
 
-const initialState = {
-  status: "",
-  message: "",
-};
+// const initialState = {
+//   status: "",
+//   message: "",
+// };
 
 export default function ContactForm() {
   // const [formState, formAction] = useFormState(createContactData, initialState);
