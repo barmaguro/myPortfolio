@@ -12,13 +12,13 @@ const initialState = {
 };
 
 export default function ContactForm() {
-  const [formState, formAction] = useFormState(createContactData, initialState);
+  // const [formState, formAction] = useFormState(createContactData, initialState);
   const [isSent, setIsSent] = useState(false);
 
   // ③ 送信成功を検知 → モーダルを開く
-  useEffect(() => {
-    if (formState.status === "success") setIsSent(true);
-  }, [formState.status]);
+  // useEffect(() => {
+  //   if (formState.status === "success") setIsSent(true);
+  // }, [formState.status]);
   return (
     <>
       <form action={process.env.NEXT_PUBLIC_NEWT_FORM_ENDPOINT} method="POST" className="mt-8">
@@ -115,11 +115,10 @@ export default function ContactForm() {
               className="block size-6"
               id="polisycheck"
               name="polisycheck"
-              role="checkbox"
               aria-checked="false"
-              aria-label="プライバシーポリシーに同意してチェックする"
+              aria-labelledby="policycheck-label"
             />
-            <p className="h-full">
+            <p className="h-full" id="policycheck-label">
               <Link
                 href="/privacyPolicy"
                 rel="privacy-policy"
