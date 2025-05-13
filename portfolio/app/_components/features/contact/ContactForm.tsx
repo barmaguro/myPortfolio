@@ -5,7 +5,7 @@ import { contactFormSchema } from "@/libs/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { FieldErrors, useForm } from "react-hook-form";
 import type { z } from "zod";
 
 type FormValues = z.infer<typeof contactFormSchema>;
@@ -24,8 +24,11 @@ export default function ContactForm() {
     mode: "onBlur", // フォーカスを外した時にバリデーションを実行
   });
 
+  const [validationSummary, setValidationSummary] = useState<string[]>([]);
+
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    setValidationSummary([]); // 送信時にサマリーをリセット
 
     try {
       // ここで実際のAPIリクエストを行います
@@ -41,6 +44,21 @@ export default function ContactForm() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const onError = (errors: FieldErrors<FormValues>) => {
+    // エラーメッセージを収集
+    const errorMessages: string[] = [];
+
+    if (errors.name) errorMessages.push("お名前が入力されていません");
+    if (errors.email)
+      errorMessages.push("メールアドレスが正しく入力されていません");
+    if (errors.message)
+      errorMessages.push("お問い合わせ内容が正しく入力されていません");
+    if (errors.privacy)
+      errorMessages.push("プライバシーポリシーへの同意が必要です");
+
+    setValidationSummary(errorMessages);
   };
 
   return (
@@ -77,6 +95,18 @@ export default function ContactForm() {
           method="POST"
           className="mt-8"
         >
+          {validationSummary.length > 0 && (
+            <div className="mt-4 rounded-md border border-red-200 bg-red-50 p-3">
+              <p className="mb-2 font-medium text-red-600">
+                以下の項目をご確認ください。
+              </p>
+              <ul className="list-disc space-y-1 pl-5 text-sm text-red-600">
+                {validationSummary.map((message, index) => (
+                  <li key={index}>{message}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="container [&>div]:mt-10">
             <div className="relative flex flex-col gap-1">
               <div className="flex items-center justify-between">
@@ -89,18 +119,21 @@ export default function ContactForm() {
               </div>
               <input
                 type="text"
-                className="h-8 border border-primary px-2 py-1 md:h-10"
+                className={`h-8 border border-primary px-2 py-1 md:h-10 ${errors.name ? "border-warning" : ""}`}
                 id="fullname"
                 inputMode="text"
                 name="fullname"
                 autoComplete="name"
+                aria-invalid={errors.name ? "true" : "false"}
                 {...register("name")}
                 required
               />
               {errors.name && (
-                <p className="absolute bottom-0 right-0 mt-1 text-xs md:text-sm text-red-500">
-                  {errors.name.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.name.message}
+                  </p>
+                </span>
               )}
               <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
                 <span className="block">ex.</span>
@@ -119,18 +152,21 @@ export default function ContactForm() {
               </div>
               <input
                 type="email"
-                className="h-8 border border-primary px-2 py-1 md:h-10"
+                className={`h-8 border border-primary px-2 py-1 md:h-10 ${errors.email ? "border-warning" : ""}`}
                 id="email"
                 inputMode="email"
                 {...register("email")}
                 name="email"
                 autoComplete="email"
+                aria-invalid={errors.email ? "true" : "false"}
                 required
               />
               {errors.email && (
-                <p className="absolute bottom-0 right-0 mt-1 text-xs md:text-sm text-red-500">
-                  {errors.email.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.email.message}
+                  </p>
+                </span>
               )}
               <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
                 <span className="block">ex.</span>
@@ -168,18 +204,21 @@ export default function ContactForm() {
                 </span>
               </div>
               <textarea
-                className="border border-primary px-2 py-1"
+                className={`border border-primary px-2 py-1 ${errors.message ? "border-warning" : ""}`}
                 rows={10}
                 id="message"
                 inputMode="text"
                 {...register("message")}
                 name="message"
+                aria-invalid={errors.message ? "true" : "false"}
                 required
               />
               {errors.message && (
-                <p className="absolute -bottom-7 right-0 mt-1 text-xs md:text-sm text-red-500">
-                  {errors.message.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute -bottom-7 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.message.message}
+                  </p>
+                </span>
               )}
             </div>
             <div className="relative flex items-center justify-center gap-4">
@@ -190,6 +229,7 @@ export default function ContactForm() {
                 name="polisycheck"
                 {...register("privacy")}
                 aria-checked="false"
+                aria-invalid={errors.privacy ? "true" : "false"}
                 aria-labelledby="policycheck-label"
               />
               <p className="h-full" id="policycheck-label">
@@ -204,29 +244,32 @@ export default function ContactForm() {
                 に同意する。
               </p>
               {errors.privacy && (
-                <p className="absolute -bottom-full left-1/2 mt-1 -translate-x-1/2 text-xs md:text-sm text-red-500">
-                  {errors.privacy.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute -bottom-full left-1/2 mt-1 -translate-x-1/2 whitespace-nowrap text-xs text-red-500 md:text-sm">
+                    {errors.privacy.message}
+                  </p>
+                </span>
               )}
             </div>
             {/* contact-4 */}
-            <div className="mt-20 grid place-items-center">
-              <ButtonHover
-                bgColor={"bg-primary"}
-                textColor={"hover:text-primary"}
-                borderColor={"hover:border-secondary"}
+          </div>
+          <div className="mt-20 grid place-items-center">
+            <ButtonHover
+              bgColor={"bg-primary"}
+              textColor={"hover:text-primary"}
+              borderColor={"hover:border-secondary"}
+            >
+              <button
+                type="submit"
+                value=""
+                className="size-full"
+                aria-label="お問い合わせを送信する"
+                disabled={isSubmitting}
+                onClick={handleSubmit(onSubmit, onError)}
               >
-                <button
-                  type="submit"
-                  value=""
-                  className="size-full"
-                  aria-label="お問い合わせを送信する"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "送信中..." : "送信する"}
-                </button>
-              </ButtonHover>
-            </div>
+                {isSubmitting ? "送信中..." : "送信する"}
+              </button>
+            </ButtonHover>
           </div>
         </form>
       )}
