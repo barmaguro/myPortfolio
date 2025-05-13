@@ -1,10 +1,10 @@
 "use client";
 
 import ButtonHover from "@/components/ButtonHover";
-import { createContactData } from "app/_actions/contact";
+// import { createContactData } from "app/_actions/contact";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useFormState } from "react-dom";
+// import { useEffect, useState } from "react";
+// import { useFormState } from "react-dom";
 
 const initialState = {
   status: "",
@@ -13,7 +13,7 @@ const initialState = {
 
 export default function ContactForm() {
   // const [formState, formAction] = useFormState(createContactData, initialState);
-  const [isSent, setIsSent] = useState(false);
+  // const [isSent, setIsSent] = useState(false);
 
   // ③ 送信成功を検知 → モーダルを開く
   // useEffect(() => {
@@ -146,7 +146,7 @@ export default function ContactForm() {
                 送信する
               </button>
             </ButtonHover>
-            {isSent && (
+            {/* {isSent && (
               <div
                 aria-modal
                 role="dialog"
@@ -171,7 +171,7 @@ export default function ContactForm() {
                   </button>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </form>
