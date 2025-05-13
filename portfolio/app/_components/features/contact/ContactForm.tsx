@@ -124,13 +124,16 @@ export default function ContactForm() {
                 inputMode="text"
                 name="fullname"
                 autoComplete="name"
+                aria-invalid={errors.name ? "true" : "false"}
                 {...register("name")}
                 required
               />
               {errors.name && (
-                <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
-                  {errors.name.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.name.message}
+                  </p>
+                </span>
               )}
               <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
                 <span className="block">ex.</span>
@@ -155,12 +158,15 @@ export default function ContactForm() {
                 {...register("email")}
                 name="email"
                 autoComplete="email"
+                aria-invalid={errors.email ? "true" : "false"}
                 required
               />
               {errors.email && (
-                <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
-                  {errors.email.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.email.message}
+                  </p>
+                </span>
               )}
               <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
                 <span className="block">ex.</span>
@@ -204,12 +210,15 @@ export default function ContactForm() {
                 inputMode="text"
                 {...register("message")}
                 name="message"
+                aria-invalid={errors.message ? "true" : "false"}
                 required
               />
               {errors.message && (
-                <p className="absolute -bottom-7 right-0 mt-1 text-xs text-red-500 md:text-sm">
-                  {errors.message.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute -bottom-7 right-0 mt-1 text-xs text-red-500 md:text-sm">
+                    {errors.message.message}
+                  </p>
+                </span>
               )}
             </div>
             <div className="relative flex items-center justify-center gap-4">
@@ -220,6 +229,7 @@ export default function ContactForm() {
                 name="polisycheck"
                 {...register("privacy")}
                 aria-checked="false"
+                aria-invalid={errors.privacy ? "true" : "false"}
                 aria-labelledby="policycheck-label"
               />
               <p className="h-full" id="policycheck-label">
@@ -234,9 +244,11 @@ export default function ContactForm() {
                 に同意する。
               </p>
               {errors.privacy && (
-                <p className="absolute -bottom-full left-1/2 mt-1 -translate-x-1/2 whitespace-nowrap text-xs text-red-500 md:text-sm">
-                  {errors.privacy.message}
-                </p>
+                <span role="status" aria-live="polite">
+                  <p className="absolute -bottom-full left-1/2 mt-1 -translate-x-1/2 whitespace-nowrap text-xs text-red-500 md:text-sm">
+                    {errors.privacy.message}
+                  </p>
+                </span>
               )}
             </div>
             {/* contact-4 */}
