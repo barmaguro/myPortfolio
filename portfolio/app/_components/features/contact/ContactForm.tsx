@@ -233,6 +233,7 @@ export default function ContactForm() {
                 aria-checked="false"
                 aria-invalid={errors.privacy ? "true" : "false"}
                 aria-labelledby="policycheck-label"
+                required
               />
               <p className="h-full" id="policycheck-label">
                 <Link
