@@ -161,17 +161,19 @@ export default function ContactForm() {
                 aria-invalid={errors.email ? "true" : "false"}
                 required
               />
-              {errors.email && (
-                <span role="status" aria-live="polite">
-                  <p className="absolute bottom-0 right-0 mt-1 text-xs text-red-500 md:text-sm">
-                    {errors.email.message}
-                  </p>
-                </span>
-              )}
-              <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
-                <span className="block">ex.</span>
-                <span className="block">xxxx@sample.com</span>
-              </div>
+              <span className="flex justify-between gap-4">
+                <div className="flex gap-2 text-xs tracking-widest text-zinc-500 md:text-base">
+                  <span className="block">ex.</span>
+                  <span className="block">xxxx@sample.com</span>
+                </div>
+                {errors.email && (
+                  <span role="status" aria-live="polite">
+                    <p className="mt-1 text-xs text-red-500 md:text-sm">
+                      {errors.email.message}
+                    </p>
+                  </span>
+                )}
+              </span>
             </div>
             {/* contact-2 */}
             <div className="relative flex flex-col gap-1">
