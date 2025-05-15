@@ -10,6 +10,7 @@ export default function index() {
         お問い合わせは下記のフォームからご連絡ください。<br />
         XのDMからでも承ります。
       </p>
+      <p className="text-warning"><strong>※現在お問合せフォームはメンテナンス中のため、XのDMからお願いします。</strong></p>
       <ButtonHover
         bgColor={"bg-secondary"}
         textColor={"hover:text-secondary"}

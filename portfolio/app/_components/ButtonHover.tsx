@@ -15,11 +15,11 @@ export default function ButtonHover({ children,bgColor, textColor ,borderColor,m
       <span
         className={`absolute size-full ${bgColor} top-0 rounded-full`}
       ></span>
-      <p
+      <span
         className={`absolute size-full ${bgColor} flex items-center justify-center rounded-full text-white transition hover:-translate-x-1 hover:-translate-y-1 hover:bg-white ${textColor} ${borderColor} hover:border-2 active:-translate-x-0 active:-translate-y-0`}
       >
         {children}
-      </p>
+      </span>
     </div>
   );
 }
