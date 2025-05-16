@@ -94,6 +94,7 @@ export default function ContactForm() {
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="mt-8"
+          inert
         >
           {validationSummary.length > 0 && (
             <div className="mt-4 rounded-md border border-red-200 bg-red-50 p-3">
@@ -107,13 +108,13 @@ export default function ContactForm() {
               </ul>
             </div>
           )}
-          <div className="container [&>div]:mt-10">
+          <div className="container [&>div]:mt-10  text-gray-400 [&_input]:border-gray-400 [&_textarea]:border-gray-400 ">
             <div className="relative flex flex-col gap-1">
               <div className="flex items-center justify-between">
                 <label htmlFor="fullname" className="text-lg lg:text-xl">
                   お名前
                 </label>
-                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white bg-gray-400" >
                   必須
                 </span>
               </div>
@@ -146,7 +147,7 @@ export default function ContactForm() {
                 <label htmlFor="email" className="text-lg lg:text-xl">
                   メールアドレス
                 </label>
-                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white bg-gray-400" >
                   必須
                 </span>
               </div>
@@ -201,7 +202,7 @@ export default function ContactForm() {
                 <label htmlFor="message" className="text-lg lg:text-xl">
                   お問い合わせ内容
                 </label>
-                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-warning px-3 py-1 text-sm font-semibold tracking-widest text-white bg-gray-400" >
                   必須
                 </span>
               </div>
@@ -258,7 +259,7 @@ export default function ContactForm() {
           </div>
           <div className="mt-20 grid place-items-center">
             <ButtonHover
-              bgColor={"bg-primary"}
+              bgColor={"bg-gray-400"}
               textColor={"hover:text-primary"}
               borderColor={"hover:border-secondary"}
             >
@@ -267,6 +268,7 @@ export default function ContactForm() {
                 value=""
                 className="size-full"
                 aria-label="お問い合わせを送信する"
+                data-label="button"
                 disabled={isSubmitting}
                 onClick={handleSubmit(onSubmit, onError)}
               >
