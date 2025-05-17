@@ -50,7 +50,7 @@ export default function MaskEffect({ children, addClass = "" }: MarkerProps) {
       <h1
         id="mask-effect"
         ref={ref}
-        className={`relative -bottom-3 -left-4 w-fit origin-left overflow-hidden whitespace-nowrap px-2 md:py-2 md:px-4 text-lg text-white opacity-0 before:absolute before:top-0 before:size-full before:translate-x-[var(--translateX)] before:bg-white md:text-xl lg:text-3xl  ${addClass}`}
+        className={`relative -bottom-3 -left-4 w-fit origin-left overflow-hidden whitespace-nowrap px-2 text-lg text-white opacity-0 before:absolute before:top-0 before:size-full before:translate-x-[var(--translateX)] before:bg-white md:px-4 md:py-2 md:text-xl lg:text-3xl  ${addClass}`}
       >
         {children}
       </h1>
