@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   root: true,
   extends: [
@@ -10,7 +11,7 @@ module.exports = {
   plugins: ["unused-imports"],
   settings: {
     tailwindcss: {
-      cssFiles: ['/app/globals.css'],
+      cssFiles:  [path.resolve(__dirname, 'app/globals.css')],
     },
   },
 };
