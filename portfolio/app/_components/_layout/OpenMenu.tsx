@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/drawer";
 import { Category } from "@/libs/microcms"; // ← 型をインポート
 import { navItems } from "@/libs/navigation";
+import { DrawerTitle } from "@/components/ui/drawer";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
 import CategoryList from "../CategoryList";
 
@@ -25,6 +27,9 @@ export default function OpenMenu({ categories }: OpenMenuProps) {
         menu
       </DrawerTrigger>
       <DrawerContent>
+        <DrawerTitle>
+          <VisuallyHidden>ナビゲーションメニュー</VisuallyHidden>
+        </DrawerTitle>
         <nav className="">
           <ul className="mx-auto flex w-fit flex-col items-start gap-4 py-5">
             {navItems.map((item, index) => (
