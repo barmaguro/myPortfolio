@@ -31,12 +31,14 @@ export default function ContactForm() {
     setValidationSummary([]); // 送信時にサマリーをリセット
 
     try {
-      // ここで実際のAPIリクエストを行います
-      console.log("送信データ:", data);
-
-      // 送信成功を模擬（実際の実装では、APIレスポンスに基づいて処理）
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      const response = await fetch(process.env.NEXT_PUBLIC_HYPERFORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log('送信に成功しました',data);
       setSubmitSuccess(true);
       reset(); // フォームをリセット
     } catch (error) {
@@ -90,7 +92,7 @@ export default function ContactForm() {
         </div>
       ) : (
         <form
-          action={process.env.NEXT_PUBLIC_HYPERFORM_URL}
+          action=""
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="mt-8"
