@@ -31,14 +31,14 @@ export default function ContactForm() {
     setValidationSummary([]); // 送信時にサマリーをリセット
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_HYPERFORM_URL, {
+      await fetch(process.env.NEXT_PUBLIC_HYPERFORM_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      console.log('送信に成功しました',data);
+      console.log("送信に成功しました", data);
       setSubmitSuccess(true);
       reset(); // フォームをリセット
     } catch (error) {
