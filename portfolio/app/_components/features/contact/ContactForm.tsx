@@ -31,12 +31,14 @@ export default function ContactForm() {
     setValidationSummary([]); // 送信時にサマリーをリセット
 
     try {
-      // ここで実際のAPIリクエストを行います
-      console.log("送信データ:", data);
-
-      // 送信成功を模擬（実際の実装では、APIレスポンスに基づいて処理）
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      await fetch(process.env.NEXT_PUBLIC_HYPERFORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log("送信に成功しました", data);
       setSubmitSuccess(true);
       reset(); // フォームをリセット
     } catch (error) {
@@ -90,7 +92,7 @@ export default function ContactForm() {
         </div>
       ) : (
         <form
-          action={process.env.NEXT_PUBLIC_NEWT_FORM_ENDPOINT}
+          action=""
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="mt-8"
@@ -107,13 +109,13 @@ export default function ContactForm() {
               </ul>
             </div>
           )}
-          <div className="container [&>div]:mt-10  ">
+          <div className="container [&>div]:mt-10">
             <div className="relative flex flex-col gap-1">
               <div className="flex items-center justify-between">
                 <label htmlFor="fullname" className="text-lg lg:text-xl">
                   お名前
                 </label>
-                <span className="grid place-items-center rounded-lg  px-3 py-1 text-sm font-semibold tracking-widest text-white" >
+                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
@@ -146,7 +148,7 @@ export default function ContactForm() {
                 <label htmlFor="email" className="text-lg lg:text-xl">
                   メールアドレス
                 </label>
-                <span className="grid place-items-center rounded-lg   px-3 py-1 text-sm font-semibold tracking-widest text-white" >
+                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
@@ -201,7 +203,7 @@ export default function ContactForm() {
                 <label htmlFor="message" className="text-lg lg:text-xl">
                   お問い合わせ内容
                 </label>
-                <span className="grid place-items-center rounded-lg   px-3 py-1 text-sm font-semibold tracking-widest text-white" >
+                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
