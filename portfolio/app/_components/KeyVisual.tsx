@@ -1,8 +1,7 @@
-"use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 import MaskEffect from "./_animation/MaskEffect";
 
 if (typeof window !== "undefined") {
@@ -10,33 +9,33 @@ if (typeof window !== "undefined") {
 }
 
 function KeyVisual() {
-  const ref = useRef(null);
-  const [shouldStart, setShouldStart] = useState(false);
+  // const ref = useRef(null);
+  // const [shouldStart, setShouldStart] = useState(false);
 
-  useEffect(() => {
-    if (!sessionStorage.getItem("access")) {
-      sessionStorage.setItem("access", "0");
-      setShouldStart(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!sessionStorage.getItem("access")) {
+  //     sessionStorage.setItem("access", "0");
+  //     setShouldStart(true);
+  //   }
+  // }, []);
 
-  // フラグが立ったらアニメ開始
-  useEffect(() => {
-    if (shouldStart) {
-      gsap.fromTo(
-        ref.current,
-        {
-          y: -100,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 2,
-          ease: "bounce.out",
-        }
-      );
-    }
-  }, [shouldStart]);
+  // // フラグが立ったらアニメ開始
+  // useEffect(() => {
+  //   if (shouldStart) {
+  //     gsap.fromTo(
+  //       ref.current,
+  //       {
+  //         y: -100,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 2,
+  //         ease: "bounce.out",
+  //       }
+  //     );
+  //   }
+  // }, [shouldStart]);
 
   return (
     <>
@@ -48,8 +47,8 @@ function KeyVisual() {
         </div>
         <div className="relative top-1/2 mx-auto w-full max-w-xl -translate-y-1/2 px-4 md:max-w-2xl lg:max-w-4xl">
           <div
-            ref={ref}
-            className={`relative mx-auto w-[200px] md:w-[250px] lg:w-[300px] ${shouldStart ? "opacity-0" : "opacity-100"}`}
+            // ref={ref}
+            className={`relative mx-auto w-[200px] md:w-[250px] lg:w-[300px]`}
           >
             <Image
               src="/images/logo_main.png"
