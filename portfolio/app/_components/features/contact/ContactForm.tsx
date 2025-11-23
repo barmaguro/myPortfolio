@@ -115,7 +115,7 @@ export default function ContactForm() {
                 <label htmlFor="fullname" className="text-lg lg:text-xl">
                   お名前
                 </label>
-                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-primary px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
@@ -148,7 +148,7 @@ export default function ContactForm() {
                 <label htmlFor="email" className="text-lg lg:text-xl">
                   メールアドレス
                 </label>
-                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-primary px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
@@ -203,7 +203,7 @@ export default function ContactForm() {
                 <label htmlFor="message" className="text-lg lg:text-xl">
                   お問い合わせ内容
                 </label>
-                <span className="grid place-items-center rounded-lg px-3 py-1 text-sm font-semibold tracking-widest text-white">
+                <span className="grid place-items-center rounded-lg bg-primary px-3 py-1 text-sm font-semibold tracking-widest text-white">
                   必須
                 </span>
               </div>
