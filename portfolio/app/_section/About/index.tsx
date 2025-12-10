@@ -85,7 +85,7 @@ export default function index() {
               <p className="md:text-lg lg:text-xl">事業内容</p>
             </span>
             <p className="mt-4 text-sm leading-loose tracking-[0.2em] md:text-base lg:text-lg">
-              Web制作におけるディレクション/デザイン/コーディング/CMS導入/MEO対策
+              Web制作におけるディレクション/デザイン/コーディング/CMS導入/MEO対策/ECサイト構築
             </p>
           </div>
         </div>
